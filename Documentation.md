@@ -5,10 +5,9 @@ Montag, 08.10.2018
 - Probleme bei der Installation diverser Packages, Root will irgendwie nicht:
 
 ```
-
-```
-
+su yannik npm install xy
+``
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjk5MjM1NDcsNzMwOTk4MTE2XX0=
+eyJoaXN0b3J5IjpbLTc0OTYzODAwNCw3MzA5OTgxMTZdfQ==
 -->
