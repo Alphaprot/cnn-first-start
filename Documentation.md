@@ -9,13 +9,16 @@ su yannik npm install xy
 ```
 - Keras installiert (mit TensorFlow als Backend), location:
 
-``
+```
+/home/yannik/env/
+```
+
 #### To do @home
 
 - c't-Projekt
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzczNzk5MTA1LC0xNjg5MTY2NjE2LDEyMz
-A3MTI0MDAsMTQzNDg3OTg4NiwtNzQ5NjM4MDA0LDczMDk5ODEx
-Nl19
+eyJoaXN0b3J5IjpbLTg1NzEyNDA2NSwtMTY4OTE2NjYxNiwxMj
+MwNzEyNDAwLDE0MzQ4Nzk4ODYsLTc0OTYzODAwNCw3MzA5OTgx
+MTZdfQ==
 -->
