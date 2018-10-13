@@ -49,10 +49,11 @@ sondern über
 ```
 pip install --upgrade tensorflow
 ```
-installieren. Klingt blöd,  ist aber so (Support nur für Ubuntu und R
+installieren. Klingt blöd,  ist aber so (Support nur für Ubuntu und Raspbian)
+
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYwNDYwOTc5Myw2ODI0NTkwMywtODU3MT
-I0MDY1LC0xNjg5MTY2NjE2LDEyMzA3MTI0MDAsMTQzNDg3OTg4
-NiwtNzQ5NjM4MDA0LDczMDk5ODExNl19
+eyJoaXN0b3J5IjpbLTE4MDkxODY4NTgsNjgyNDU5MDMsLTg1Nz
+EyNDA2NSwtMTY4OTE2NjYxNiwxMjMwNzEyNDAwLDE0MzQ4Nzk4
+ODYsLTc0OTYzODAwNCw3MzA5OTgxMTZdfQ==
 -->
