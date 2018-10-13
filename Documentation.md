@@ -19,7 +19,7 @@ su yannik npm install xy
 
 #### Samstag, 13.10.2018
 -  Fedora: pyenv, virtualenv und virtualenvwrapper laufen endlich (Keras braucht TensorFlow - und Tensorflow gibt's noch nicht für Python 3.7.0) läuft, zwei Virtual-Envs angelegt
-- Hinweis: https://gist.github.com/Geoy/f55ed54d24cc9ff1c14bd95fac21c042
+- Hinweis: https://gist.github.com/Geoy/f55ed54d24cc9ff1c14bd95fac21c042 und https://www.tecmint.com/pyenv-install-and-manage-multiple-python-versions-in-linux/
 - .bashrc modifiziert:
 ```
 ## pyenv configs
@@ -43,7 +43,7 @@ export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 - Wichtig: Path zu virtualenvwrapper.sh modifizieren! per find / -name suchen.
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwOTY0MzA0NTYsLTg1NzEyNDA2NSwtMT
-Y4OTE2NjYxNiwxMjMwNzEyNDAwLDE0MzQ4Nzk4ODYsLTc0OTYz
-ODAwNCw3MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbNjgyNDU5MDMsLTg1NzEyNDA2NSwtMTY4OT
+E2NjYxNiwxMjMwNzEyNDAwLDE0MzQ4Nzk4ODYsLTc0OTYzODAw
+NCw3MzA5OTgxMTZdfQ==
 -->
