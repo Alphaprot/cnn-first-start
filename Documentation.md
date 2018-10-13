@@ -40,10 +40,10 @@ source /home/yannik/.local/bin/virtualenvwrapper.sh
 # Tell pyenv-virtualenvwrapper to use pyenv when creating new Python environments
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 ```
-- Wichtig: Path zu virtualenvwrapper
+- Wichtig: Path zu virtualenvwrapper.sh modifizieren! per find / -name suchen.
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg2OTA0NTU1NiwtODU3MTI0MDY1LC0xNj
-g5MTY2NjE2LDEyMzA3MTI0MDAsMTQzNDg3OTg4NiwtNzQ5NjM4
-MDA0LDczMDk5ODExNl19
+eyJoaXN0b3J5IjpbLTEwOTY0MzA0NTYsLTg1NzEyNDA2NSwtMT
+Y4OTE2NjYxNiwxMjMwNzEyNDAwLDE0MzQ4Nzk4ODYsLTc0OTYz
+ODAwNCw3MzA5OTgxMTZdfQ==
 -->
