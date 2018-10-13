@@ -41,9 +41,18 @@ source /home/yannik/.local/bin/virtualenvwrapper.sh
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 ```
 - Wichtig: Path zu virtualenvwrapper.sh modifizieren! per find / -name suchen.
+-  Tensorflow nicht über
+```
+pip install tensorflow
+```
+sondern über
+```
+pip install --upgrade tensorflow
+```
+installieren. Klingt blöd,  ist aber so (Support nur für Ubuntu und R
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjgyNDU5MDMsLTg1NzEyNDA2NSwtMTY4OT
-E2NjYxNiwxMjMwNzEyNDAwLDE0MzQ4Nzk4ODYsLTc0OTYzODAw
-NCw3MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbLTYwNDYwOTc5Myw2ODI0NTkwMywtODU3MT
+I0MDY1LC0xNjg5MTY2NjE2LDEyMzA3MTI0MDAsMTQzNDg3OTg4
+NiwtNzQ5NjM4MDA0LDczMDk5ODExNl19
 -->
