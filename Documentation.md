@@ -20,8 +20,20 @@ su yannik npm install xy
 #### Samstag, 13.10.2018
 -  Fedora: pyenv, virtualenv und virtualenvwrapper laufen endlich (Keras braucht TensorFlow - und Tensorflow gibt's noch nicht für Python 3.7.0) läuft, zwei Virtual-Envs angelegt
 - Hinweis: https://gist.github.com/Geoy/f55ed54d24cc9ff1c14bd95fac21c042 und https://www.tecmint.com/pyenv-install-and-manage-multiple-python-versions-in-linux/
-- .bashrc modifiziert:
+- .bashrc modifiziert (Stand: 17:18-13-10-2018):
 ```
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+
 ## pyenv configs
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -35,6 +47,7 @@ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
 
 # Setup virtualenv home
 export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_SCRIPT=/home/yannik/.local/bin/virtualenvwrapper.sh
 source /home/yannik/.local/bin/virtualenvwrapper.sh
 
 # Tell pyenv-virtualenvwrapper to use pyenv when creating new Python environments
@@ -53,7 +66,7 @@ installieren. Klingt blöd,  ist aber so (Support nur für Ubuntu und Raspbian)
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MDkxODY4NTgsNjgyNDU5MDMsLTg1Nz
-EyNDA2NSwtMTY4OTE2NjYxNiwxMjMwNzEyNDAwLDE0MzQ4Nzk4
-ODYsLTc0OTYzODAwNCw3MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbLTcxODA3MzgyMiwtMTgwOTE4Njg1OCw2OD
+I0NTkwMywtODU3MTI0MDY1LC0xNjg5MTY2NjE2LDEyMzA3MTI0
+MDAsMTQzNDg3OTg4NiwtNzQ5NjM4MDA0LDczMDk5ODExNl19
 -->
