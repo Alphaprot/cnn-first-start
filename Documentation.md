@@ -67,10 +67,12 @@ installieren. Klingt blöd,  ist aber so (Support nur für Ubuntu und Raspbian)
 #### Montag, 15.10.2018
 
 - am Arbeitsplatz (OpenSUSE) in /home/yannik/VirtualEnvs/ zwei venvs angelegt (mxNet und Keras)
--  Mangels sudo-Rechten 
+-  Mangels sudo-Rechten bleibt Python auf Version 3.4.5
+
+
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMTY1NjExMTMsLTcxODA3MzgyMiwtMT
+eyJoaXN0b3J5IjpbLTIxMTYyNDM5MDksLTcxODA3MzgyMiwtMT
 gwOTE4Njg1OCw2ODI0NTkwMywtODU3MTI0MDY1LC0xNjg5MTY2
 NjE2LDEyMzA3MTI0MDAsMTQzNDg3OTg4NiwtNzQ5NjM4MDA0LD
 czMDk5ODExNl19
