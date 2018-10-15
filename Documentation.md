@@ -68,11 +68,11 @@ installieren. Klingt blöd,  ist aber so (Support nur für Ubuntu und Raspbian)
 
 - am Arbeitsplatz (OpenSUSE) in ``/home/yannik/VirtualEnvs/`` zwei venvs angelegt (mxNet und Keras)
 -  Mangels sudo-Rechten bleibt Python auf Version 3.4.5
-- c't Projekt begonnen: Datendegenerator (File sowohl lokal unter ``Dokumente`` also auch
+- c't Projekt begonnen: Datendegenerator (File sowohl lokal unter ``Dokumente`` also auch auf GitHub)
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYwOTY2NjYxNiwtMTQ3MzU4NTcyMywtMj
+eyJoaXN0b3J5IjpbLTUwMTU1OTc3NiwtMTQ3MzU4NTcyMywtMj
 ExNjI0MzkwOSwtNzE4MDczODIyLC0xODA5MTg2ODU4LDY4MjQ1
 OTAzLC04NTcxMjQwNjUsLTE2ODkxNjY2MTYsMTIzMDcxMjQwMC
 wxNDM0ODc5ODg2LC03NDk2MzgwMDQsNzMwOTk4MTE2XX0=
