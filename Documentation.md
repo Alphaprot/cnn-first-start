@@ -70,6 +70,12 @@ installieren. Klingt blöd,  ist aber so (Support nur für Ubuntu und Raspbian)
 -  Mangels sudo-Rechten bleibt Python auf Version 3.4.5
 - c't Projekt begonnen: Datendegenerator (File sowohl lokal unter ``Dokumente`` also auch auf GitHub)
 
+#### Montag, 22.10.2018
+
+- Fedora 28 (Danke @Suren), sogar mit root-Rechten (als Teil der Gruppe wheel und in ´´visudo´´ dadurch automat. sudo-Rechte)
+- pyenv installiert, trotzdem Probleme beim Download von Python-Versionen (unknown command), evtl. Probleme mit Abhängigkeiten/Paketen?
+- Kurzpräsentation besprochen: Bild Blitz einfügen und Reihenfolge ändern
+
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbLTUwMTU1OTc3NiwtMTQ3MzU4NTcyMywtMj
