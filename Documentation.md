@@ -76,11 +76,13 @@ installieren. Klingt blöd,  ist aber so (Support nur für Ubuntu und Raspbian)
 - pyenv installiert, trotzdem Probleme beim Download von Python-Versionen (unknown command), evtl. Probleme mit Abhängigkeiten/Paketen?
 - Kurzpräsentation besprochen: Bild Blitz einfügen und Reihenfolge ändern
 
-####
+-----
+- Atom Editor funktioniert nur in der aktuellen Beta mit Fedora/Ubuntu
+
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDM3MzIwMDk5LC01MDE1NTk3NzYsLTE0Nz
+eyJoaXN0b3J5IjpbNTY5NjQ1ODY0LC01MDE1NTk3NzYsLTE0Nz
 M1ODU3MjMsLTIxMTYyNDM5MDksLTcxODA3MzgyMiwtMTgwOTE4
 Njg1OCw2ODI0NTkwMywtODU3MTI0MDY1LC0xNjg5MTY2NjE2LD
 EyMzA3MTI0MDAsMTQzNDg3OTg4NiwtNzQ5NjM4MDA0LDczMDk5
