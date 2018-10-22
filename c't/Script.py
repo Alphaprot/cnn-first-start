@@ -1,6 +1,11 @@
 from keras.utils import Sequence
+from skimage.transform import resize
+from skimage.transform import rotate
+from skimage.filters import gaussian
+from scipy.ndimage.filters import convolve
 
-import os, sys
+from os import path, listdir
+
 path = "/Pfad/Zu/FotoOrdner/" //Pfad eingeben, der auf den Foto-Ordner verweist
 
 class datenGenerator (Sequence)
@@ -30,3 +35,13 @@ def on_epoch_end(self):
     self.indexes = np.arange(
         len(self.data))
     np.random.shuffle(self.indexes) //Mischen der Bild-Reihenfolge on_epoch_end
+
+def __data_generatMischen der Bild-Reihenfolge on_epoch_endion__(self, filename_selection):
+    min_scale_factor = max (
+        self.target_size[0] / img.shape[0],Mischen der Bild-Reihenfolge on_epoch_end
+        self.target_size[1] / img.shape[1],
+    )
+sized_img = resize (img,
+        (int(img.shape[0] * sf),
+         int(img.shape[1] * sf),
+         img.shape[2]), mode='reflect')
