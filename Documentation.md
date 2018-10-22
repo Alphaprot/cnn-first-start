@@ -72,14 +72,17 @@ installieren. Klingt blöd,  ist aber so (Support nur für Ubuntu und Raspbian)
 
 #### Montag, 22.10.2018
 
-- Fedora 28 (Danke @Suren), sogar mit root-Rechten (als Teil der Gruppe wheel und in `visudo` dadurch automat. sudo-Rechte)
+- Fedora 28 (Danke @Suren), sogar mit root-Rechten (als Teil der Gruppe wheel und in ``visudo`` dadurch automat. sudo-Rechte)
 - pyenv installiert, trotzdem Probleme beim Download von Python-Versionen (unknown command), evtl. Probleme mit Abhängigkeiten/Paketen?
 - Kurzpräsentation besprochen: Bild Blitz einfügen und Reihenfolge ändern
 
+####
+
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUwMTU1OTc3NiwtMTQ3MzU4NTcyMywtMj
-ExNjI0MzkwOSwtNzE4MDczODIyLC0xODA5MTg2ODU4LDY4MjQ1
-OTAzLC04NTcxMjQwNjUsLTE2ODkxNjY2MTYsMTIzMDcxMjQwMC
-wxNDM0ODc5ODg2LC03NDk2MzgwMDQsNzMwOTk4MTE2XX0=
+eyJoaXN0b3J5IjpbNDM3MzIwMDk5LC01MDE1NTk3NzYsLTE0Nz
+M1ODU3MjMsLTIxMTYyNDM5MDksLTcxODA3MzgyMiwtMTgwOTE4
+Njg1OCw2ODI0NTkwMywtODU3MTI0MDY1LC0xNjg5MTY2NjE2LD
+EyMzA3MTI0MDAsMTQzNDg3OTg4NiwtNzQ5NjM4MDA0LDczMDk5
+ODExNl19
 -->
