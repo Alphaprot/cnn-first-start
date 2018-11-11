@@ -82,15 +82,17 @@ installieren. Klingt blöd,  ist aber so (Support nur für Ubuntu und Raspbian)
 #### Sontag, 11.11.2018
 
 - https://gluon.mxnet.io/chapter01_crashcourse/introduction.html Lesen eines Tutorials über Gluon in mxNet. Unser Problem mit Klassifizierung als Blitz/nicht Blitz ist am ehesten ein "Sequence learning based classification network". Trotzdem: Unterschied Regression und Klassifikation?
-- Sequence Learning, weil Verknüpfen von Video-Frames.
+- Sequence Learning (seq2seq), weil Verknüpfen von Video-Frames.
 1. Wenn an einer Stelle im vorhergehenden Bild ein Blitz war, kann an der selben Stelle im nächsten Frame immer noch derselbe Blitz sein. 
-2. Wenn an einer Stelle nur hoher Helligkeitswert, ist ein Blitz in diesem Bereich wahrscheinlicher (kann
+2. Wenn an einer Stelle nur hoher Helligkeitswert, ist ein Blitz in diesem Bereich wahrscheinlicher (kann)
+3. Kristalle: 3. Dimension (Tiefe des Kristalls)
+- 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwNTk2NTQ0Niw1Njk2NDU4NjQsLTUwMT
-U1OTc3NiwtMTQ3MzU4NTcyMywtMjExNjI0MzkwOSwtNzE4MDcz
-ODIyLC0xODA5MTg2ODU4LDY4MjQ1OTAzLC04NTcxMjQwNjUsLT
-E2ODkxNjY2MTYsMTIzMDcxMjQwMCwxNDM0ODc5ODg2LC03NDk2
-MzgwMDQsNzMwOTk4MTE2XX0=
+eyJoaXN0b3J5IjpbNDk2NjMyNjExLDU2OTY0NTg2NCwtNTAxNT
+U5Nzc2LC0xNDczNTg1NzIzLC0yMTE2MjQzOTA5LC03MTgwNzM4
+MjIsLTE4MDkxODY4NTgsNjgyNDU5MDMsLTg1NzEyNDA2NSwtMT
+Y4OTE2NjYxNiwxMjMwNzEyNDAwLDE0MzQ4Nzk4ODYsLTc0OTYz
+ODAwNCw3MzA5OTgxMTZdfQ==
 -->
