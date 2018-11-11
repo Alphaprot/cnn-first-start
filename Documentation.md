@@ -81,13 +81,14 @@ installieren. Klingt blöd,  ist aber so (Support nur für Ubuntu und Raspbian)
 
 #### Sontag, 11.11.2018
 
-- https://gluon.mxnet.io/chapter01_crashcourse/introduction.html Lesen eines Tutorials über Gluon in mxNet. Unser Problem mit Klassifizierung als Blitz/nicht Blitz ist am ehesten ein "Sequence learning based 
+- https://gluon.mxnet.io/chapter01_crashcourse/introduction.html Lesen eines Tutorials über Gluon in mxNet. Unser Problem mit Klassifizierung als Blitz/nicht Blitz ist am ehesten ein "Sequence learning based classification network". Trotzdem: Unterschied Regression und Klassifikation?
+- Sequence Learning, weil Verknüpfen von 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzk1NDQ1MDA2LDU2OTY0NTg2NCwtNTAxNT
-U5Nzc2LC0xNDczNTg1NzIzLC0yMTE2MjQzOTA5LC03MTgwNzM4
-MjIsLTE4MDkxODY4NTgsNjgyNDU5MDMsLTg1NzEyNDA2NSwtMT
-Y4OTE2NjYxNiwxMjMwNzEyNDAwLDE0MzQ4Nzk4ODYsLTc0OTYz
-ODAwNCw3MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbMTMyNzUyNDYxOSw1Njk2NDU4NjQsLTUwMT
+U1OTc3NiwtMTQ3MzU4NTcyMywtMjExNjI0MzkwOSwtNzE4MDcz
+ODIyLC0xODA5MTg2ODU4LDY4MjQ1OTAzLC04NTcxMjQwNjUsLT
+E2ODkxNjY2MTYsMTIzMDcxMjQwMCwxNDM0ODc5ODg2LC03NDk2
+MzgwMDQsNzMwOTk4MTE2XX0=
 -->
