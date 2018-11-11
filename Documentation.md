@@ -79,12 +79,15 @@ installieren. Klingt blöd,  ist aber so (Support nur für Ubuntu und Raspbian)
 -----
 - Atom Editor funktioniert nur in der aktuellen Beta mit Fedora/Ubuntu
 
+#### Sontag, 11.11.2018
+
+- https://gluon.mxnet.io/chapter01_crashcourse/introduction.html Lesen eines Tutorials über Gluon in mxNet. Unser Problem mit Klassifizierung als Blitz/nicht Blitz ist am ehesten ein "Sequence learning based 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTY5NjQ1ODY0LC01MDE1NTk3NzYsLTE0Nz
-M1ODU3MjMsLTIxMTYyNDM5MDksLTcxODA3MzgyMiwtMTgwOTE4
-Njg1OCw2ODI0NTkwMywtODU3MTI0MDY1LC0xNjg5MTY2NjE2LD
-EyMzA3MTI0MDAsMTQzNDg3OTg4NiwtNzQ5NjM4MDA0LDczMDk5
-ODExNl19
+eyJoaXN0b3J5IjpbMzk1NDQ1MDA2LDU2OTY0NTg2NCwtNTAxNT
+U5Nzc2LC0xNDczNTg1NzIzLC0yMTE2MjQzOTA5LC03MTgwNzM4
+MjIsLTE4MDkxODY4NTgsNjgyNDU5MDMsLTg1NzEyNDA2NSwtMT
+Y4OTE2NjYxNiwxMjMwNzEyNDAwLDE0MzQ4Nzk4ODYsLTc0OTYz
+ODAwNCw3MzA5OTgxMTZdfQ==
 -->
