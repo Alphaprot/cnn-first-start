@@ -86,13 +86,16 @@ installieren. Klingt blöd,  ist aber so (Support nur für Ubuntu und Raspbian)
 1. Wenn an einer Stelle im vorhergehenden Bild ein Blitz war, kann an der selben Stelle im nächsten Frame immer noch derselbe Blitz sein. 
 2. Wenn an einer Stelle nur hoher Helligkeitswert, ist ein Blitz in diesem Bereich wahrscheinlicher (kann)
 3. Kristalle: 3. Dimension (Tiefe des Kristalls)
-- 
+
+#### Montag, 12.11.2018
+
+
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDk2NjMyNjExLDU2OTY0NTg2NCwtNTAxNT
-U5Nzc2LC0xNDczNTg1NzIzLC0yMTE2MjQzOTA5LC03MTgwNzM4
-MjIsLTE4MDkxODY4NTgsNjgyNDU5MDMsLTg1NzEyNDA2NSwtMT
-Y4OTE2NjYxNiwxMjMwNzEyNDAwLDE0MzQ4Nzk4ODYsLTc0OTYz
-ODAwNCw3MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbNzQwNTY0OTUyLDQ5NjYzMjYxMSw1Njk2ND
+U4NjQsLTUwMTU1OTc3NiwtMTQ3MzU4NTcyMywtMjExNjI0Mzkw
+OSwtNzE4MDczODIyLC0xODA5MTg2ODU4LDY4MjQ1OTAzLC04NT
+cxMjQwNjUsLTE2ODkxNjY2MTYsMTIzMDcxMjQwMCwxNDM0ODc5
+ODg2LC03NDk2MzgwMDQsNzMwOTk4MTE2XX0=
 -->
