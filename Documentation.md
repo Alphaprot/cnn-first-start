@@ -66,13 +66,13 @@ installieren. Klingt blöd,  ist aber so (Support nur für Ubuntu und Raspbian)
 
 #### Montag, 15.10.2018
 
-- am Arbeitsplatz (OpenSUSE) in ``/home/yannik/VirtualEnvs/`` zwei venvs angelegt (mxNet und Keras)
+- am Arbeitsplatz (OpenSUSE) in `/home/yannik/VirtualEnvs/` zwei venvs angelegt (mxNet und Keras)
 -  Mangels sudo-Rechten bleibt Python auf Version 3.4.5
-- c't Projekt begonnen: Datendegenerator (File sowohl lokal unter ``Dokumente`` also auch auf GitHub)
+- c't Projekt begonnen: Datendegenerator (File sowohl lokal unter `Dokumente` also auch auf GitHub)
 
 #### Montag, 22.10.2018
 
-- Fedora 28 (Danke @Suren), sogar mit root-Rechten (als Teil der Gruppe wheel und in ``visudo`` dadurch automat. sudo-Rechte)
+- Fedora 28 (Danke @Suren), sogar mit root-Rechten (als Teil der Gruppe wheel und in `visudo` dadurch automat. sudo-Rechte)
 - pyenv installiert, trotzdem Probleme beim Download von Python-Versionen (unknown command), evtl. Probleme mit Abhängigkeiten/Paketen?
 - Kurzpräsentation besprochen: Bild Blitz einfügen und Reihenfolge ändern
 
@@ -93,9 +93,10 @@ installieren. Klingt blöd,  ist aber so (Support nur für Ubuntu und Raspbian)
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQwNTY0OTUyLDQ5NjYzMjYxMSw1Njk2ND
-U4NjQsLTUwMTU1OTc3NiwtMTQ3MzU4NTcyMywtMjExNjI0Mzkw
-OSwtNzE4MDczODIyLC0xODA5MTg2ODU4LDY4MjQ1OTAzLC04NT
-cxMjQwNjUsLTE2ODkxNjY2MTYsMTIzMDcxMjQwMCwxNDM0ODc5
-ODg2LC03NDk2MzgwMDQsNzMwOTk4MTE2XX0=
+eyJoaXN0b3J5IjpbLTE0NzQ4NTA2ODgsNzQwNTY0OTUyLDQ5Nj
+YzMjYxMSw1Njk2NDU4NjQsLTUwMTU1OTc3NiwtMTQ3MzU4NTcy
+MywtMjExNjI0MzkwOSwtNzE4MDczODIyLC0xODA5MTg2ODU4LD
+Y4MjQ1OTAzLC04NTcxMjQwNjUsLTE2ODkxNjY2MTYsMTIzMDcx
+MjQwMCwxNDM0ODc5ODg2LC03NDk2MzgwMDQsNzMwOTk4MTE2XX
+0=
 -->
