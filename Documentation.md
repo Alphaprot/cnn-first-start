@@ -97,14 +97,14 @@ Es ist Zeit für TensorBoard!
 - An Parametern herumgespielt:
   - Erhöhung der num_classes von 10 auf 14 führt zu Einer Test Accuracy von 0.9918 (vorher: 0.9906 und um 0.005 geringeren Test-Loss)
   - 
-![enter image description here](https://picasaweb.google.com/114556302529800406145/6630508660930804529#6630508665108941362 "Num_classes 10 &gt; 14")
+![Num_classes 10 &gt; 14](https://picasaweb.google.com/114556302529800406145/6630508660930804529#6630508665108941362 "Num_classes 10 &gt; 14")
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5MTQ2NDMwMSwzMzI2OTE2MywtMTQ3ND
-g1MDY4OCw3NDA1NjQ5NTIsNDk2NjMyNjExLDU2OTY0NTg2NCwt
-NTAxNTU5Nzc2LC0xNDczNTg1NzIzLC0yMTE2MjQzOTA5LC03MT
-gwNzM4MjIsLTE4MDkxODY4NTgsNjgyNDU5MDMsLTg1NzEyNDA2
-NSwtMTY4OTE2NjYxNiwxMjMwNzEyNDAwLDE0MzQ4Nzk4ODYsLT
-c0OTYzODAwNCw3MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbLTIwNTczMDA3MzUsMzMyNjkxNjMsLTE0Nz
+Q4NTA2ODgsNzQwNTY0OTUyLDQ5NjYzMjYxMSw1Njk2NDU4NjQs
+LTUwMTU1OTc3NiwtMTQ3MzU4NTcyMywtMjExNjI0MzkwOSwtNz
+E4MDczODIyLC0xODA5MTg2ODU4LDY4MjQ1OTAzLC04NTcxMjQw
+NjUsLTE2ODkxNjY2MTYsMTIzMDcxMjQwMCwxNDM0ODc5ODg2LC
+03NDk2MzgwMDQsNzMwOTk4MTE2XX0=
 -->
