@@ -95,12 +95,12 @@ Es ist Zeit für TensorBoard!
 
 #### Sonntag, 02.12.2018
 - An Parametern herumgespielt:
-  - Erhöhung der 
+  - Erhöhung der num_classes von 10 auf 14 führt zu 
 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExODg3NzIzNzUsMzMyNjkxNjMsLTE0Nz
+eyJoaXN0b3J5IjpbLTE0NDE3ODA0NjYsMzMyNjkxNjMsLTE0Nz
 Q4NTA2ODgsNzQwNTY0OTUyLDQ5NjYzMjYxMSw1Njk2NDU4NjQs
 LTUwMTU1OTc3NiwtMTQ3MzU4NTcyMywtMjExNjI0MzkwOSwtNz
 E4MDczODIyLC0xODA5MTg2ODU4LDY4MjQ1OTAzLC04NTcxMjQw
