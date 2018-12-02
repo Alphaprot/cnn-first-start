@@ -98,12 +98,14 @@ Es ist Zeit für TensorBoard!
   - Erhöhung der num_classes von 10 auf 14 führt zu Einer Test Accuracy von 0.9918 (vorher: 0.9906 und um 0.005 geringeren Test-Loss)
   
 ![enter image description here](https://lh3.googleusercontent.com/SRsoY9FjLFtcWAcEieCM7JTU-obx43MZdCWrCTTsiT-wEYqMNKqpyIXsI825UGf9XsteOOrYs1H8)
-  - Erhöhung der Epochenanzahl um 2 auf 14 bei gleichzeitiger Erhöhung der num_classes auf 14 führt zu Test-Accuracy von 0.9919, d.h Veränderung nur Minimal. Evt
+  - Erhöhung der Epochenanzahl um 2 auf 14 bei gleichzeitiger Erhöhung der num_classes auf 14 führt zu Test-Accuracy von 0.9919, d.h Veränderung nur Minimal. Evtl. Overfitting in Epoche 13, weil Rückgang der Accuracy von 9923 auf 9921
+
+![enter image description here](https://picasaweb.google.com/114556302529800406145/6630511323016369313#6630511328925533778)
 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMTI2MjQ4MjksMTc5MzE4MjIyNywzMz
+eyJoaXN0b3J5IjpbLTE3MTMwODIzMzUsMTc5MzE4MjIyNywzMz
 I2OTE2MywtMTQ3NDg1MDY4OCw3NDA1NjQ5NTIsNDk2NjMyNjEx
 LDU2OTY0NTg2NCwtNTAxNTU5Nzc2LC0xNDczNTg1NzIzLC0yMT
 E2MjQzOTA5LC03MTgwNzM4MjIsLTE4MDkxODY4NTgsNjgyNDU5
