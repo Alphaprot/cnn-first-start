@@ -96,12 +96,14 @@ Es ist Zeit für TensorBoard!
 #### Sonntag, 02.12.2018
 - An Parametern herumgespielt:
   - Erhöhung der num_classes von 10 auf 14 führt zu Einer Test Accuracy von 0.9918 (vorher: 0.9906 und um 0.005 geringeren Test-Loss)
-  - 
-![Num_classes 10 &gt; 14](https://picasaweb.google.com/114556302529800406145/6630508660930804529#6630508665108941362 "Num_classes 10 &gt; 14")
+  
+![enter image description here](https://lh3.googleusercontent.com/SRsoY9FjLFtcWAcEieCM7JTU-obx43MZdCWrCTTsiT-wEYqMNKqpyIXsI825UGf9XsteOOrYs1H8)
+  - dkaf
+
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNTczMDA3MzUsMzMyNjkxNjMsLTE0Nz
+eyJoaXN0b3J5IjpbLTEyNzMwNjk5NjIsMzMyNjkxNjMsLTE0Nz
 Q4NTA2ODgsNzQwNTY0OTUyLDQ5NjYzMjYxMSw1Njk2NDU4NjQs
 LTUwMTU1OTc3NiwtMTQ3MzU4NTcyMywtMjExNjI0MzkwOSwtNz
 E4MDczODIyLC0xODA5MTg2ODU4LDY4MjQ1OTAzLC04NTcxMjQw
