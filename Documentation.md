@@ -89,17 +89,21 @@ installieren. Klingt blöd,  ist aber so (Support nur für Ubuntu und Raspbian)
 
 #### Montag, 12.11.2018
 
-#### Montag, 19.11.2018´
+#### Montag, 19.11.2018
 
 Es ist Zeit für TensorBoard!
+
+#### Sonntag, 02.12.2018
+- An Parametern herumgespielt:
+  - Erhöhung der 
 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzMyNjkxNjMsLTE0NzQ4NTA2ODgsNzQwNT
-Y0OTUyLDQ5NjYzMjYxMSw1Njk2NDU4NjQsLTUwMTU1OTc3Niwt
-MTQ3MzU4NTcyMywtMjExNjI0MzkwOSwtNzE4MDczODIyLC0xOD
-A5MTg2ODU4LDY4MjQ1OTAzLC04NTcxMjQwNjUsLTE2ODkxNjY2
-MTYsMTIzMDcxMjQwMCwxNDM0ODc5ODg2LC03NDk2MzgwMDQsNz
-MwOTk4MTE2XX0=
+eyJoaXN0b3J5IjpbLTExODg3NzIzNzUsMzMyNjkxNjMsLTE0Nz
+Q4NTA2ODgsNzQwNTY0OTUyLDQ5NjYzMjYxMSw1Njk2NDU4NjQs
+LTUwMTU1OTc3NiwtMTQ3MzU4NTcyMywtMjExNjI0MzkwOSwtNz
+E4MDczODIyLC0xODA5MTg2ODU4LDY4MjQ1OTAzLC04NTcxMjQw
+NjUsLTE2ODkxNjY2MTYsMTIzMDcxMjQwMCwxNDM0ODc5ODg2LC
+03NDk2MzgwMDQsNzMwOTk4MTE2XX0=
 -->
