@@ -95,15 +95,15 @@ Es ist Zeit für TensorBoard!
 
 #### Sonntag, 02.12.2018
 - An Parametern herumgespielt:
-  - Erhöhung der num_classes von 10 auf 14 führt zu 
+  - Erhöhung der num_classes von 10 auf 14 führt zu Einer Test Accuracy von 0.9918 (vorher: 0.9906
 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NDE3ODA0NjYsMzMyNjkxNjMsLTE0Nz
-Q4NTA2ODgsNzQwNTY0OTUyLDQ5NjYzMjYxMSw1Njk2NDU4NjQs
-LTUwMTU1OTc3NiwtMTQ3MzU4NTcyMywtMjExNjI0MzkwOSwtNz
-E4MDczODIyLC0xODA5MTg2ODU4LDY4MjQ1OTAzLC04NTcxMjQw
-NjUsLTE2ODkxNjY2MTYsMTIzMDcxMjQwMCwxNDM0ODc5ODg2LC
-03NDk2MzgwMDQsNzMwOTk4MTE2XX0=
+eyJoaXN0b3J5IjpbMTY5NTExNjk0LDMzMjY5MTYzLC0xNDc0OD
+UwNjg4LDc0MDU2NDk1Miw0OTY2MzI2MTEsNTY5NjQ1ODY0LC01
+MDE1NTk3NzYsLTE0NzM1ODU3MjMsLTIxMTYyNDM5MDksLTcxOD
+A3MzgyMiwtMTgwOTE4Njg1OCw2ODI0NTkwMywtODU3MTI0MDY1
+LC0xNjg5MTY2NjE2LDEyMzA3MTI0MDAsMTQzNDg3OTg4NiwtNz
+Q5NjM4MDA0LDczMDk5ODExNl19
 -->
