@@ -95,7 +95,7 @@ Es ist Zeit für TensorBoard!
 
 #### Sonntag, 02.12.2018
 - An Parametern herumgespielt:
-  - Erhöhung der num_classes von 10 auf 14 führt zu Einer Test Accuracy von 0.9918 (vorher: 0.9906 und um 0.005 geringeren Test-Loss)
+  - Erhöhung der num_classes von 10 auf 14 führt zu einer Test Accuracy von 0.9918 (vorher: 0.9906 und um 0.005 geringeren Test-Loss)
   
 ![enter image description here](https://lh3.googleusercontent.com/SRsoY9FjLFtcWAcEieCM7JTU-obx43MZdCWrCTTsiT-wEYqMNKqpyIXsI825UGf9XsteOOrYs1H8)
   - Erhöhung der Epochenanzahl um 2 auf 14 bei gleichzeitiger Erhöhung der num_classes auf 14 führt zu Test-Accuracy von 0.9919, d.h Veränderung nur Minimal. Evtl. Overfitting in Epoche 13, weil Rückgang der Accuracy von 9923 auf 9921
@@ -105,10 +105,11 @@ Es ist Zeit für TensorBoard!
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc2MjIzMDQwMiwxNzkzMTgyMjI3LDMzMj
-Y5MTYzLC0xNDc0ODUwNjg4LDc0MDU2NDk1Miw0OTY2MzI2MTEs
-NTY5NjQ1ODY0LC01MDE1NTk3NzYsLTE0NzM1ODU3MjMsLTIxMT
-YyNDM5MDksLTcxODA3MzgyMiwtMTgwOTE4Njg1OCw2ODI0NTkw
-MywtODU3MTI0MDY1LC0xNjg5MTY2NjE2LDEyMzA3MTI0MDAsMT
-QzNDg3OTg4NiwtNzQ5NjM4MDA0LDczMDk5ODExNl19
+eyJoaXN0b3J5IjpbLTEzMzc3NzE4NzAsMTc2MjIzMDQwMiwxNz
+kzMTgyMjI3LDMzMjY5MTYzLC0xNDc0ODUwNjg4LDc0MDU2NDk1
+Miw0OTY2MzI2MTEsNTY5NjQ1ODY0LC01MDE1NTk3NzYsLTE0Nz
+M1ODU3MjMsLTIxMTYyNDM5MDksLTcxODA3MzgyMiwtMTgwOTE4
+Njg1OCw2ODI0NTkwMywtODU3MTI0MDY1LC0xNjg5MTY2NjE2LD
+EyMzA3MTI0MDAsMTQzNDg3OTg4NiwtNzQ5NjM4MDA0LDczMDk5
+ODExNl19
 -->
