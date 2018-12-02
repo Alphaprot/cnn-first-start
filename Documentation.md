@@ -98,15 +98,15 @@ Es ist Zeit für TensorBoard!
   - Erhöhung der num_classes von 10 auf 14 führt zu Einer Test Accuracy von 0.9918 (vorher: 0.9906 und um 0.005 geringeren Test-Loss)
   
 ![enter image description here](https://lh3.googleusercontent.com/SRsoY9FjLFtcWAcEieCM7JTU-obx43MZdCWrCTTsiT-wEYqMNKqpyIXsI825UGf9XsteOOrYs1H8)
-  - dkaf
+  - Erhöhung der Epochenanzahl um 2 auf 14 bei gleichzeitiger Erhöhung der num_classes auf 14 führt zu
 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNzMwNjk5NjIsMzMyNjkxNjMsLTE0Nz
-Q4NTA2ODgsNzQwNTY0OTUyLDQ5NjYzMjYxMSw1Njk2NDU4NjQs
-LTUwMTU1OTc3NiwtMTQ3MzU4NTcyMywtMjExNjI0MzkwOSwtNz
-E4MDczODIyLC0xODA5MTg2ODU4LDY4MjQ1OTAzLC04NTcxMjQw
-NjUsLTE2ODkxNjY2MTYsMTIzMDcxMjQwMCwxNDM0ODc5ODg2LC
-03NDk2MzgwMDQsNzMwOTk4MTE2XX0=
+eyJoaXN0b3J5IjpbMjAxNDEzMjI0MywzMzI2OTE2MywtMTQ3ND
+g1MDY4OCw3NDA1NjQ5NTIsNDk2NjMyNjExLDU2OTY0NTg2NCwt
+NTAxNTU5Nzc2LC0xNDczNTg1NzIzLC0yMTE2MjQzOTA5LC03MT
+gwNzM4MjIsLTE4MDkxODY4NTgsNjgyNDU5MDMsLTg1NzEyNDA2
+NSwtMTY4OTE2NjYxNiwxMjMwNzEyNDAwLDE0MzQ4Nzk4ODYsLT
+c0OTYzODAwNCw3MzA5OTgxMTZdfQ==
 -->
