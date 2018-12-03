@@ -103,14 +103,17 @@ Es ist Zeit für TensorBoard!
 ![enter image description here](https://lh3.googleusercontent.com/CCentEqHA5MYIbWvO5RAeU8TRElfEAC9ef3YjdeYVzTCXndeUv3EaK_hJxL4DamC0vG0AKhDdTLN)
 
 #### Montag, 03.12.2018
-HA: Invertieren von Te
+HA: Invertieren von MNIST-Daten (Scikit-Image etc.)
+Grafisch darstellen!
+JSON-Export des Netzes
+
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQwODM4NDYxLC0xMzM3NzcxODcwLDE3Nj
-IyMzA0MDIsMTc5MzE4MjIyNywzMzI2OTE2MywtMTQ3NDg1MDY4
-OCw3NDA1NjQ5NTIsNDk2NjMyNjExLDU2OTY0NTg2NCwtNTAxNT
-U5Nzc2LC0xNDczNTg1NzIzLC0yMTE2MjQzOTA5LC03MTgwNzM4
-MjIsLTE4MDkxODY4NTgsNjgyNDU5MDMsLTg1NzEyNDA2NSwtMT
-Y4OTE2NjYxNiwxMjMwNzEyNDAwLDE0MzQ4Nzk4ODYsLTc0OTYz
-ODAwNF19
+eyJoaXN0b3J5IjpbMTM4ODIzNjAwMiwtMTMzNzc3MTg3MCwxNz
+YyMjMwNDAyLDE3OTMxODIyMjcsMzMyNjkxNjMsLTE0NzQ4NTA2
+ODgsNzQwNTY0OTUyLDQ5NjYzMjYxMSw1Njk2NDU4NjQsLTUwMT
+U1OTc3NiwtMTQ3MzU4NTcyMywtMjExNjI0MzkwOSwtNzE4MDcz
+ODIyLC0xODA5MTg2ODU4LDY4MjQ1OTAzLC04NTcxMjQwNjUsLT
+E2ODkxNjY2MTYsMTIzMDcxMjQwMCwxNDM0ODc5ODg2LC03NDk2
+MzgwMDRdfQ==
 -->
