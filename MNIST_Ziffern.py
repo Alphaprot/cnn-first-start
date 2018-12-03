@@ -11,7 +11,7 @@ from time import time #added for line 57 format(time())
 from keras.callbacks import TensorBoard #added
 
 batch_size = 128
-num_classes = 14 #was 10
+num_classes = 10
 epochs = 14
 
 img_rows, img_cols = 28, 28
