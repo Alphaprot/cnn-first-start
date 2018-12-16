@@ -17,4 +17,5 @@ for data in mnist_old :
 
     plt.title('Label was (label)'.format(label=label))
     plt.imshow(pixels, cmap='grey')
-    plt.show
+    plt.show()
+    
