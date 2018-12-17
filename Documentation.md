@@ -107,13 +107,16 @@ HA: Invertieren von MNIST-Daten (Scikit-Image etc.)
 Grafisch darstellen!
 JSON-Export des Netzes
 
+#### Montag, 17.12.2018
+- Besuch von Herrn Oehme
+- Printing des MNIST-Datensets funktioniert, wichtig ist die Unterteilung in "x_train, y_tr
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM4ODIzNjAwMiwtMTMzNzc3MTg3MCwxNz
-YyMjMwNDAyLDE3OTMxODIyMjcsMzMyNjkxNjMsLTE0NzQ4NTA2
-ODgsNzQwNTY0OTUyLDQ5NjYzMjYxMSw1Njk2NDU4NjQsLTUwMT
-U1OTc3NiwtMTQ3MzU4NTcyMywtMjExNjI0MzkwOSwtNzE4MDcz
-ODIyLC0xODA5MTg2ODU4LDY4MjQ1OTAzLC04NTcxMjQwNjUsLT
-E2ODkxNjY2MTYsMTIzMDcxMjQwMCwxNDM0ODc5ODg2LC03NDk2
-MzgwMDRdfQ==
+eyJoaXN0b3J5IjpbLTIwNDc0NzUzMjksMTM4ODIzNjAwMiwtMT
+MzNzc3MTg3MCwxNzYyMjMwNDAyLDE3OTMxODIyMjcsMzMyNjkx
+NjMsLTE0NzQ4NTA2ODgsNzQwNTY0OTUyLDQ5NjYzMjYxMSw1Nj
+k2NDU4NjQsLTUwMTU1OTc3NiwtMTQ3MzU4NTcyMywtMjExNjI0
+MzkwOSwtNzE4MDczODIyLC0xODA5MTg2ODU4LDY4MjQ1OTAzLC
+04NTcxMjQwNjUsLTE2ODkxNjY2MTYsMTIzMDcxMjQwMCwxNDM0
+ODc5ODg2XX0=
 -->
