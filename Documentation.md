@@ -109,14 +109,16 @@ JSON-Export des Netzes
 
 #### Montag, 17.12.2018
 - Besuch von Herrn Oehme
-- Printing des MNIST-Datensets funktioniert, wichtig ist die Unterteilung in "x_train, y_tr
+- Printing des MNIST-Datensets funktioniert, wichtig ist die Unterteilung in "x_train, y_train, x_test, y_test", weil er sonst ein Array zu weit oben arbeitet
+- Converter-Script begonnen, Problem ist, dass es trotz print nichts ausgibt
+- 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNDc0NzUzMjksMTM4ODIzNjAwMiwtMT
-MzNzc3MTg3MCwxNzYyMjMwNDAyLDE3OTMxODIyMjcsMzMyNjkx
-NjMsLTE0NzQ4NTA2ODgsNzQwNTY0OTUyLDQ5NjYzMjYxMSw1Nj
-k2NDU4NjQsLTUwMTU1OTc3NiwtMTQ3MzU4NTcyMywtMjExNjI0
-MzkwOSwtNzE4MDczODIyLC0xODA5MTg2ODU4LDY4MjQ1OTAzLC
-04NTcxMjQwNjUsLTE2ODkxNjY2MTYsMTIzMDcxMjQwMCwxNDM0
-ODc5ODg2XX0=
+eyJoaXN0b3J5IjpbMTg4MDIyODgzNCwxMzg4MjM2MDAyLC0xMz
+M3NzcxODcwLDE3NjIyMzA0MDIsMTc5MzE4MjIyNywzMzI2OTE2
+MywtMTQ3NDg1MDY4OCw3NDA1NjQ5NTIsNDk2NjMyNjExLDU2OT
+Y0NTg2NCwtNTAxNTU5Nzc2LC0xNDczNTg1NzIzLC0yMTE2MjQz
+OTA5LC03MTgwNzM4MjIsLTE4MDkxODY4NTgsNjgyNDU5MDMsLT
+g1NzEyNDA2NSwtMTY4OTE2NjYxNiwxMjMwNzEyNDAwLDE0MzQ4
+Nzk4ODZdfQ==
 -->
