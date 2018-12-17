@@ -8,14 +8,14 @@ import os
 import math
 import matplotlib.pyplot as plt
 
-mnist_old = mnist.load_data()
-for data in mnist_old :
-    label = data[0]
-    pixels = data[1:]
-    pixels = np.array(pixels, dtype='uint8')
-    pixels = pixels.reshape([28, 28])
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
+for data in x_train [:3]:
 
-    plt.title('Label was (label)'.format(label=label))
-    plt.imshow(pixels, cmap='grey')
+
+    print data
+    pixels = np.array(data, dtype='uint8')
+    pixels = data.reshape((28, 28))
+
+##   plt.title('Label was (label)'.format(label=label))
+    plt.imshow(pixels, cmap='Greys')
     plt.show()
-    
