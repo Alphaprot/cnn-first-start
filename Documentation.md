@@ -107,6 +107,9 @@ HA: Invertieren von MNIST-Daten (Scikit-Image etc.)
 Grafisch darstellen!
 JSON-Export des Netzes
 
+#### Montag, 14.01.2018
+http://effbot.org/imagingbook/image.htm Guide for Pillow Image Manipulation
+
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMTM4ODIzNjAwMiwtMTMzNzc3MTg3MCwxNz
