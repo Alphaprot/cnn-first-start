@@ -6,16 +6,18 @@ import glob
 
 image_x_size = 28
 image_y_size = 28
-image_list = []
 
-for filename in glob.glob("test-images/*.png"):
-    image = Image.open(filename)
-    image_list.apped(image)
-print (image_list)
-print ("Finished")
+#for filename in glob.glob('./test-images/*.png'):
+#    image = Image.open(filename)
 
+image_store = os.listdir("test-images/")
+images_plt = [Image.open(i) for i in image_store if i.endswith(".png")]
+images_plt.convert("LA")
+width, height = images_plt.size
+print (i," size is ",width," by ",height)
 
-    '''image = Image.open(file)
+"""
+    image = Image.open(file)
     image.convert('LA')
     width, height = image.size
     print (file," size is ",width," by ",height)
@@ -31,4 +33,5 @@ print ("Finished")
         print (file,".npy was saved")
     else:
         print ('Nichts zu tun')
-    '''
+
+"""
