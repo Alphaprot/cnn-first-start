@@ -1,3 +1,4 @@
+from __future__ import print_function
 import matplotlib.pyplot as plt
 import os
 import numpy as np
@@ -6,16 +7,35 @@ import glob
 
 image_x_size = 28
 image_y_size = 28
+image_list = []
+image_path = "image_store"
 
-#for filename in glob.glob('./test-images/*.png'):
-#    image = Image.open(filename)
 
-image_store = os.listdir("test-images/")
-images_plt = [Image.open(i) for i in image_store if i.endswith(".png")]
-images_plt.convert("LA")
-width, height = images_plt.size
-print (i," size is ",width," by ",height)
+#image_store = os.listdir("test-images/")
 
+def show():
+    for filename in glob.glob('test-images/*.png'):
+        img=Image.open(filename)
+        image_list.append(img)
+
+    else:
+        if len(image_list) == 0:
+            print ("No files were read! Please check input directory!") #images_plt = [Image.open(i) for i in range(len(image_store)) if i.endswith(".png")]
+
+
+    print(*image_list, sep='\n')
+    print("\n", len(image_list), " images were read.")
+
+def convert():
+    for filename in image_list:
+        img = Image.open(filename)
+        img.convert("LA")
+        width, height = images_plt.size
+        print (filename," size is now",width," by ",height)
+
+
+show()
+convert()
 """
     image = Image.open(file)
     image.convert('LA')
