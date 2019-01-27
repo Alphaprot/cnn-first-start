@@ -118,16 +118,18 @@ Wichtig; für bessere Erkennung der eigenen Ziffern ergänzen (z.B. nach https:/
 Oder in kurz:
 MNIST Bilder sind:
 - 28x28, Ziffer jedoch nur 20x20 in der Mitte der äußeren Box
-- M
+- Mitte wird mit "Center of mass" bestimmt
+- weiße Ziffern auf schwarzem Grund
+- 
 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5MjU2NzE0MSwxMzg4MjM2MDAyLC0xMz
-M3NzcxODcwLDE3NjIyMzA0MDIsMTc5MzE4MjIyNywzMzI2OTE2
-MywtMTQ3NDg1MDY4OCw3NDA1NjQ5NTIsNDk2NjMyNjExLDU2OT
-Y0NTg2NCwtNTAxNTU5Nzc2LC0xNDczNTg1NzIzLC0yMTE2MjQz
-OTA5LC03MTgwNzM4MjIsLTE4MDkxODY4NTgsNjgyNDU5MDMsLT
-g1NzEyNDA2NSwtMTY4OTE2NjYxNiwxMjMwNzEyNDAwLDE0MzQ4
-Nzk4ODZdfQ==
+eyJoaXN0b3J5IjpbLTE0Mjc1NTM1NjksMTM4ODIzNjAwMiwtMT
+MzNzc3MTg3MCwxNzYyMjMwNDAyLDE3OTMxODIyMjcsMzMyNjkx
+NjMsLTE0NzQ4NTA2ODgsNzQwNTY0OTUyLDQ5NjYzMjYxMSw1Nj
+k2NDU4NjQsLTUwMTU1OTc3NiwtMTQ3MzU4NTcyMywtMjExNjI0
+MzkwOSwtNzE4MDczODIyLC0xODA5MTg2ODU4LDY4MjQ1OTAzLC
+04NTcxMjQwNjUsLTE2ODkxNjY2MTYsMTIzMDcxMjQwMCwxNDM0
+ODc5ODg2XX0=
 -->
