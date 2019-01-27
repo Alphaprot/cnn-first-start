@@ -111,17 +111,23 @@ JSON-Export des Netzes
 http://effbot.org/imagingbook/image.htm Guide for Pillow Image Manipulation
 
 #### Sonntag, 27.01.2019
-Wichtig; für bessere Erkennung der eigenen Ziffern ergänzen (z.B. nach https://medium.com/@o.kroeger/tensorflow-mnist-and-your-own-handwritten-digits-4d1cd32bbab4
+Wichtig; für bessere Erkennung der eigenen Ziffern ergänzen (z.B. nach https://medium.com/@o.kroeger/tensorflow-mnist-and-your-own-handwritten-digits-4d1cd32bbab4):
+
 ```The original black and white (bilevel) images from NIST were size normalized to fit in a 20x20 pixel box while preserving their aspect ratio. The resulting images contain grey levels as a result of the anti-aliasing technique used by the normalization algorithm. the images were centered in a 28x28 image by computing the center of mass of the pixels, and translating the image so as to position this point at the center of the 28x28 field```
+
+Oder in kurz:
+MNIST Bilder sind:
+- 28x28, Ziffer jedoch nur 20x20 in der Mitte der äußeren Box
+- M
 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODY3NzI0NiwxMzg4MjM2MDAyLC0xMzM3Nz
-cxODcwLDE3NjIyMzA0MDIsMTc5MzE4MjIyNywzMzI2OTE2Mywt
-MTQ3NDg1MDY4OCw3NDA1NjQ5NTIsNDk2NjMyNjExLDU2OTY0NT
-g2NCwtNTAxNTU5Nzc2LC0xNDczNTg1NzIzLC0yMTE2MjQzOTA5
-LC03MTgwNzM4MjIsLTE4MDkxODY4NTgsNjgyNDU5MDMsLTg1Nz
-EyNDA2NSwtMTY4OTE2NjYxNiwxMjMwNzEyNDAwLDE0MzQ4Nzk4
-ODZdfQ==
+eyJoaXN0b3J5IjpbMTg5MjU2NzE0MSwxMzg4MjM2MDAyLC0xMz
+M3NzcxODcwLDE3NjIyMzA0MDIsMTc5MzE4MjIyNywzMzI2OTE2
+MywtMTQ3NDg1MDY4OCw3NDA1NjQ5NTIsNDk2NjMyNjExLDU2OT
+Y0NTg2NCwtNTAxNTU5Nzc2LC0xNDczNTg1NzIzLC0yMTE2MjQz
+OTA5LC03MTgwNzM4MjIsLTE4MDkxODY4NTgsNjgyNDU5MDMsLT
+g1NzEyNDA2NSwtMTY4OTE2NjYxNiwxMjMwNzEyNDAwLDE0MzQ4
+Nzk4ODZdfQ==
 -->
