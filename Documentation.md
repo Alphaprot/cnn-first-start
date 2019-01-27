@@ -120,16 +120,16 @@ MNIST Bilder sind:
 - 28x28, Ziffer jedoch nur 20x20 in der Mitte der äußeren Box
 - Mitte wird mit "Center of mass" bestimmt
 - weiße Ziffern auf schwarzem Grund
-- 784 Stellen in einem Array x (eig. Bild Pixel für Pixel), denen ein Label in einem Array
+- 784 Stellen in einem Array x (eig. Bild Pixel für Pixel), denen ein Label in einem Array y zugeordnet ist (0-9)
 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTI4ODQzNzk0LC0xNDI3NTUzNTY5LDEzOD
-gyMzYwMDIsLTEzMzc3NzE4NzAsMTc2MjIzMDQwMiwxNzkzMTgy
-MjI3LDMzMjY5MTYzLC0xNDc0ODUwNjg4LDc0MDU2NDk1Miw0OT
-Y2MzI2MTEsNTY5NjQ1ODY0LC01MDE1NTk3NzYsLTE0NzM1ODU3
-MjMsLTIxMTYyNDM5MDksLTcxODA3MzgyMiwtMTgwOTE4Njg1OC
-w2ODI0NTkwMywtODU3MTI0MDY1LC0xNjg5MTY2NjE2LDEyMzA3
-MTI0MDBdfQ==
+eyJoaXN0b3J5IjpbLTE0ODQ0NjY4MjUsLTE0Mjc1NTM1NjksMT
+M4ODIzNjAwMiwtMTMzNzc3MTg3MCwxNzYyMjMwNDAyLDE3OTMx
+ODIyMjcsMzMyNjkxNjMsLTE0NzQ4NTA2ODgsNzQwNTY0OTUyLD
+Q5NjYzMjYxMSw1Njk2NDU4NjQsLTUwMTU1OTc3NiwtMTQ3MzU4
+NTcyMywtMjExNjI0MzkwOSwtNzE4MDczODIyLC0xODA5MTg2OD
+U4LDY4MjQ1OTAzLC04NTcxMjQwNjUsLTE2ODkxNjY2MTYsMTIz
+MDcxMjQwMF19
 -->
