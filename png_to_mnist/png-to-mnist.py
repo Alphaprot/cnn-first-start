@@ -9,6 +9,7 @@ import glob
 image_x_size = 28
 image_y_size = 28
 image_list = []
+filename_list = []
 xImage = None # Leere Variable (spaeter numpy-Array fuer Bilddaten)
 yLabel = None
 scriptPath = os.path.dirname(os.path.abspath(__file__))
@@ -20,6 +21,7 @@ def createLists():
     for filename in glob.glob(scriptPath + '/test-images/*.png'):
         img=Image.open(filename)
         image_list.append(img)
+        filename_list.append(filename)
 
     else:
         if len(image_list) == 0:
@@ -32,21 +34,29 @@ def createLists():
     print("\n", len(image_list), " images were read.")
 
 def convert():
-    for filename in image_list:
-        img = Image.open(filename)
+    for img in image_list:
+        #img = Image.open(filename)
         img.convert("LA")
-        width, height = images_plt.size
+        width, height = img.size
 
         if (width > image_x_size or height > image_y_size):
             Image.resize(image_x_size, image_y_size)
             print (filename," size is now",width," by ",height)
 
 def makeLabels():
-    for filename in image_list:
-        return filename
+    for i, filename in enumerate(filename_list):
+        basename = os.path.basename(filename)
+        label = basename[3]
+        a, b = basename[1], basename[2]
+        filenumber = sum(int(a)*10 + int(b))
+        yLabel.insert([filenumber, label])
+    print("\n", "Filename is: ", filenumber, "-", label)
+
 
 createLists()
+makeLabels()
 convert()
+
 """
     image = Image.open(file)
     image.convert('LA')
