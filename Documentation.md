@@ -107,7 +107,7 @@ HA: Invertieren von MNIST-Daten (Scikit-Image etc.)
 Grafisch darstellen!
 JSON-Export des Netzes
 
-#### Montag, 14.01.2018
+#### Montag, 14.017.12.2018
 http://effbot.org/imagingbook/image.htm Guide for Pillow Image Manipulation
 
 #### Sonntag, 27.01.2019
@@ -120,16 +120,16 @@ MNIST Bilder sind:
 - 28x28, Ziffer jedoch nur 20x20 in der Mitte der äußeren Box
 - Mitte wird mit "Center of mass" bestimmt
 - weiße Ziffern auf schwarzem Grund
-- 784 Stellen in einem Array x (eig. Bild Pixel für Pixel), denen ein Label in einem Array y zugeordnet ist (0-9)
-
-
+- 784 Stellen in einem Array x (eig. Bild Pixel für Pixel), denen ein Label in einem Array y zugeordnet ist (on Hain, x_test, y_test", weil er sonst ein Array zu weit oben arbeitet
+- Converter-Script begonnen, Problem ist, dass es trotz print nichts ausgibt
+- 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0ODQ0NjY4MjUsLTE0Mjc1NTM1NjksMT
-M4ODIzNjAwMiwtMTMzNzc3MTg3MCwxNzYyMjMwNDAyLDE3OTMx
-ODIyMjcsMzMyNjkxNjMsLTE0NzQ4NTA2ODgsNzQwNTY0OTUyLD
-Q5NjYzMjYxMSw1Njk2NDU4NjQsLTUwMTU1OTc3NiwtMTQ3MzU4
-NTcyMywtMjExNjI0MzkwOSwtNzE4MDczODIyLC0xODA5MTg2OD
-U4LDY4MjQ1OTAzLC04NTcxMjQwNjUsLTE2ODkxNjY2MTYsMTIz
-MDcxMjQwMF19
+eyJoaXN0b3J5IjpbLTMwNzk3NDkxNiwtMTQ4NDQ2NjgyNSwtMT
+QyNzU1MzU2OSwxMzg4MjM2MDAyLC0xMzM3NzcxODcwLDE3NjIy
+MzA0MDIsMTc5MzE4MjIyNywzMzI2OTE2MywtMTQ3NDg1MDY4OC
+w3NDA1NjQ5NTIsNDk2NjMyNjExLDU2OTY0NTg2NCwtNTAxNTU5
+Nzc2LC0xNDczNTg1NzIzLC0yMTE2MjQzOTA5LC03MTgwNzM4Mj
+IsLTE4MDkxODY4NTgsNjgyNDU5MDMsLTg1NzEyNDA2NSwtMTY4
+OTE2NjYxNl19
 -->
