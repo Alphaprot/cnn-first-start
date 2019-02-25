@@ -122,14 +122,17 @@ MNIST Bilder sind:
 - weiße Ziffern auf schwarzem Grund
 - 784 Stellen in einem Array x (eig. Bild Pixel für Pixel), denen ein Label in einem Array y zugeordnet ist (on Hain, x_test, y_test", weil er sonst ein Array zu weit oben arbeitet
 - Converter-Script begonnen, Problem ist, dass es trotz print nichts ausgibt
-- 
+
+#### Montag, 25.02.2019
+- Aragats Project begonnen (Blitzerkennung)
+- Subtraktives Verfahren benutzen (d.h. config-File auslesen, um Bildinhalte zu subtrahieren --> nur beweg 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwNzk3NDkxNiwtMTQ4NDQ2NjgyNSwtMT
-QyNzU1MzU2OSwxMzg4MjM2MDAyLC0xMzM3NzcxODcwLDE3NjIy
-MzA0MDIsMTc5MzE4MjIyNywzMzI2OTE2MywtMTQ3NDg1MDY4OC
-w3NDA1NjQ5NTIsNDk2NjMyNjExLDU2OTY0NTg2NCwtNTAxNTU5
-Nzc2LC0xNDczNTg1NzIzLC0yMTE2MjQzOTA5LC03MTgwNzM4Mj
-IsLTE4MDkxODY4NTgsNjgyNDU5MDMsLTg1NzEyNDA2NSwtMTY4
-OTE2NjYxNl19
+eyJoaXN0b3J5IjpbNDIzMTA3MzI5LC0xNDg0NDY2ODI1LC0xND
+I3NTUzNTY5LDEzODgyMzYwMDIsLTEzMzc3NzE4NzAsMTc2MjIz
+MDQwMiwxNzkzMTgyMjI3LDMzMjY5MTYzLC0xNDc0ODUwNjg4LD
+c0MDU2NDk1Miw0OTY2MzI2MTEsNTY5NjQ1ODY0LC01MDE1NTk3
+NzYsLTE0NzM1ODU3MjMsLTIxMTYyNDM5MDksLTcxODA3MzgyMi
+wtMTgwOTE4Njg1OCw2ODI0NTkwMywtODU3MTI0MDY1LC0xNjg5
+MTY2NjE2XX0=
 -->
