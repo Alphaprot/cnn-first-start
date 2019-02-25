@@ -125,14 +125,15 @@ MNIST Bilder sind:
 
 #### Montag, 25.02.2019
 - Aragats Project begonnen (Blitzerkennung)
-- Subtraktives Verfahren benutzen (d.h. config-File auslesen, um Bildinhalte zu subtrahieren --> nur beweg 
+- Subtraktives Verfahren benutzen (d.h. config-File auslesen, um Bildinhalte zu subtrahieren --> nur bewegte bleiben bestehen)
+ 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDIzMTA3MzI5LC0xNDg0NDY2ODI1LC0xND
-I3NTUzNTY5LDEzODgyMzYwMDIsLTEzMzc3NzE4NzAsMTc2MjIz
-MDQwMiwxNzkzMTgyMjI3LDMzMjY5MTYzLC0xNDc0ODUwNjg4LD
-c0MDU2NDk1Miw0OTY2MzI2MTEsNTY5NjQ1ODY0LC01MDE1NTk3
-NzYsLTE0NzM1ODU3MjMsLTIxMTYyNDM5MDksLTcxODA3MzgyMi
-wtMTgwOTE4Njg1OCw2ODI0NTkwMywtODU3MTI0MDY1LC0xNjg5
-MTY2NjE2XX0=
+eyJoaXN0b3J5IjpbLTE1NTc1Nzc3MDIsLTE0ODQ0NjY4MjUsLT
+E0Mjc1NTM1NjksMTM4ODIzNjAwMiwtMTMzNzc3MTg3MCwxNzYy
+MjMwNDAyLDE3OTMxODIyMjcsMzMyNjkxNjMsLTE0NzQ4NTA2OD
+gsNzQwNTY0OTUyLDQ5NjYzMjYxMSw1Njk2NDU4NjQsLTUwMTU1
+OTc3NiwtMTQ3MzU4NTcyMywtMjExNjI0MzkwOSwtNzE4MDczOD
+IyLC0xODA5MTg2ODU4LDY4MjQ1OTAzLC04NTcxMjQwNjUsLTE2
+ODkxNjY2MTZdfQ==
 -->
