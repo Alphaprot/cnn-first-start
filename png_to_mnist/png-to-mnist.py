@@ -27,8 +27,8 @@ def createLists():
         if len(image_list) == 0:
             print ("No files were read! Please check input directory!") #images_plt = [Image.open(i) for i in range(len(image_store)) if i.endswith(".png")]
 
-    xImage = np.zeros((len(image_list), 784)) # Numpy-Array mit Laenge aller Bilder in der image_list
-    yLabel = np.zeros((len(image_list),10)) # Numpy-Array mit Labels 0-9
+    xImage = np.zeros((len(image_list), 28, 28), dtype=int) # Numpy-Array mit Laenge aller Bilder in der image_list
+    yLabel = np.zeros((len(image_list),10), dtype=int) # Numpy-Array mit Labels 0-9
 
     print(*image_list, sep='\n')
     print("\n", len(image_list), " images were read.")
