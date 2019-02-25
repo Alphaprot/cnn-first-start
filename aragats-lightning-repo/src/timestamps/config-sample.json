@@ -1,0 +1,7 @@
+{
+	"datadir" : "/Users/kopmann/to-be-transfered/src/aragats/data",
+	"dataset" : "03_img-unique",
+	"filemask" : "aragats-%s.jpg",
+	"framerate" : 30,
+	"seqsplit" : 100
+}
