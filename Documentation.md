@@ -127,13 +127,16 @@ MNIST Bilder sind:
 - Aragats Project begonnen (Blitzerkennung)
 - Subtraktives Verfahren benutzen (d.h. config-File auslesen, um Bildinhalte zu subtrahieren --> nur bewegte bleiben bestehen)
  
+ #### Montag, 01.04.2019:
+ - https://python-textbok.readthedocs.io/en/1.0/Introduction_to_GUI_Programming.html#custom-events
+ - Tkinter GUI zum manuellen Klassifizieren von Bildern als Testdatensatz
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NTc1Nzc3MDIsLTE0ODQ0NjY4MjUsLT
-E0Mjc1NTM1NjksMTM4ODIzNjAwMiwtMTMzNzc3MTg3MCwxNzYy
-MjMwNDAyLDE3OTMxODIyMjcsMzMyNjkxNjMsLTE0NzQ4NTA2OD
-gsNzQwNTY0OTUyLDQ5NjYzMjYxMSw1Njk2NDU4NjQsLTUwMTU1
-OTc3NiwtMTQ3MzU4NTcyMywtMjExNjI0MzkwOSwtNzE4MDczOD
-IyLC0xODA5MTg2ODU4LDY4MjQ1OTAzLC04NTcxMjQwNjUsLTE2
-ODkxNjY2MTZdfQ==
+eyJoaXN0b3J5IjpbLTIwNTE5MjcxODEsLTE1NTc1Nzc3MDIsLT
+E0ODQ0NjY4MjUsLTE0Mjc1NTM1NjksMTM4ODIzNjAwMiwtMTMz
+Nzc3MTg3MCwxNzYyMjMwNDAyLDE3OTMxODIyMjcsMzMyNjkxNj
+MsLTE0NzQ4NTA2ODgsNzQwNTY0OTUyLDQ5NjYzMjYxMSw1Njk2
+NDU4NjQsLTUwMTU1OTc3NiwtMTQ3MzU4NTcyMywtMjExNjI0Mz
+kwOSwtNzE4MDczODIyLC0xODA5MTg2ODU4LDY4MjQ1OTAzLC04
+NTcxMjQwNjVdfQ==
 -->
