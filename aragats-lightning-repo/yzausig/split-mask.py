@@ -12,7 +12,6 @@ scriptPath = os.path.dirname(os.path.abspath(__file__))
 imagePath = (scriptPath + '/aragats-raw/*.jpg') #Make sure this is a valid path
 configPath = os.dirname(dirname('scriptPath'))
 imStore = np.array([], [], []) #Valid for RGB (3-channel) images). If usong other color formats, change tuple count
-imTemp
 configFile = "03_imag.json"
 
 print ("Dirname is" + scriptPath)
@@ -20,8 +19,7 @@ print ("Dirname is" + scriptPath)
 def mask():
     for filename in glob.glob(imagePath):
         im=Image.open(filename)
-        imTemp = np.array(im)
-        imStore.append()
+        imStore.append(im)
 
 def save():
     print("Nothing to save")
