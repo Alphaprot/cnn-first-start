@@ -130,13 +130,20 @@ MNIST Bilder sind:
  #### Montag, 01.04.2019:
  - https://python-textbok.readthedocs.io/en/1.0/Introduction_to_GUI_Programming.html#custom-events
  - Tkinter GUI zum manuellen Klassifizieren von Bildern als Testdatensatz
+
+#### Sonntag, 07.04.2019
+- Tkinter GUI weiterentwickelt (benutzt jetzt Grid-System)
+- To do: Bildvorschau und Bereichmarkieren
+- Nützliche Links: 
+https://stackoverflow.com/questions/16373887/how-to-set-the-text-value-content-of-an-entry-widget-using-a-button-in-tkinter
+
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNTE5MjcxODEsLTE1NTc1Nzc3MDIsLT
-E0ODQ0NjY4MjUsLTE0Mjc1NTM1NjksMTM4ODIzNjAwMiwtMTMz
-Nzc3MTg3MCwxNzYyMjMwNDAyLDE3OTMxODIyMjcsMzMyNjkxNj
-MsLTE0NzQ4NTA2ODgsNzQwNTY0OTUyLDQ5NjYzMjYxMSw1Njk2
-NDU4NjQsLTUwMTU1OTc3NiwtMTQ3MzU4NTcyMywtMjExNjI0Mz
-kwOSwtNzE4MDczODIyLC0xODA5MTg2ODU4LDY4MjQ1OTAzLC04
-NTcxMjQwNjVdfQ==
+eyJoaXN0b3J5IjpbMTQ2MjA3MDg4OCwtMjA1MTkyNzE4MSwtMT
+U1NzU3NzcwMiwtMTQ4NDQ2NjgyNSwtMTQyNzU1MzU2OSwxMzg4
+MjM2MDAyLC0xMzM3NzcxODcwLDE3NjIyMzA0MDIsMTc5MzE4Mj
+IyNywzMzI2OTE2MywtMTQ3NDg1MDY4OCw3NDA1NjQ5NTIsNDk2
+NjMyNjExLDU2OTY0NTg2NCwtNTAxNTU5Nzc2LC0xNDczNTg1Nz
+IzLC0yMTE2MjQzOTA5LC03MTgwNzM4MjIsLTE4MDkxODY4NTgs
+NjgyNDU5MDNdfQ==
 -->
