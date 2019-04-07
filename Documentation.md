@@ -136,14 +136,15 @@ MNIST Bilder sind:
 - To do: Bildvorschau und Bereichmarkieren
 - Nützliche Links: 
 https://stackoverflow.com/questions/16373887/how-to-set-the-text-value-content-of-an-entry-widget-using-a-button-in-tkinter
+https://effbot.org/tkinterbook/grid.htm
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ2MjA3MDg4OCwtMjA1MTkyNzE4MSwtMT
-U1NzU3NzcwMiwtMTQ4NDQ2NjgyNSwtMTQyNzU1MzU2OSwxMzg4
-MjM2MDAyLC0xMzM3NzcxODcwLDE3NjIyMzA0MDIsMTc5MzE4Mj
-IyNywzMzI2OTE2MywtMTQ3NDg1MDY4OCw3NDA1NjQ5NTIsNDk2
-NjMyNjExLDU2OTY0NTg2NCwtNTAxNTU5Nzc2LC0xNDczNTg1Nz
-IzLC0yMTE2MjQzOTA5LC03MTgwNzM4MjIsLTE4MDkxODY4NTgs
-NjgyNDU5MDNdfQ==
+eyJoaXN0b3J5IjpbLTE1MzQwNjUwMDgsLTIwNTE5MjcxODEsLT
+E1NTc1Nzc3MDIsLTE0ODQ0NjY4MjUsLTE0Mjc1NTM1NjksMTM4
+ODIzNjAwMiwtMTMzNzc3MTg3MCwxNzYyMjMwNDAyLDE3OTMxOD
+IyMjcsMzMyNjkxNjMsLTE0NzQ4NTA2ODgsNzQwNTY0OTUyLDQ5
+NjYzMjYxMSw1Njk2NDU4NjQsLTUwMTU1OTc3NiwtMTQ3MzU4NT
+cyMywtMjExNjI0MzkwOSwtNzE4MDczODIyLC0xODA5MTg2ODU4
+LDY4MjQ1OTAzXX0=
 -->
