@@ -3,6 +3,7 @@ import os
 import time
 import numpy as np
 import glob
+import json
 from PIL import Image, ImageTk
 from Tkinter import *
 import Tkinter as tk
@@ -15,7 +16,8 @@ class ApplicationGUI(tk.Frame):
 
         self.matrixSize = 32
         self.filenameList = []
-        np.empty([len(self.filenameList), 2, self.matrixSize]) #numpy-Array for training data --> 1st tuple: filename 2nd tuple: human classification result (y/n) 3rd tuple: pixel or part of grid
+        np.empty([len(self.filenameList), 2, self.matrixSize]) #numpy-Array for training data --> 1st tuple: filename 2nd tuple: human classification result (y/n) 3rd tuple: pixel or part of grid (in different colors)
+        self.quick_result_state = 0 # 0 --> undefined, 1 --> user detected lightning, 2 --> user detected no lightning
 
         self.label1 = Label(master, text="GUI to classify lightning images")
         self.label1.grid(row=0, column=1, padx='5', pady='5')
@@ -38,11 +40,24 @@ class ApplicationGUI(tk.Frame):
         self.preview_image = Canvas(master, width=500, height=500)
         self.preview_image.grid(row=4, column=1, padx='5', pady='5')
 
+        for i in range(len(self.filenameList)):
+            self.preview_image.create_image(250, 250, anchor=CENTER, image=ImageTk.PhotoImage(Image.open(self.folder_path + self.filenameList[i])))
+            wait_variable(self.quick_result_state)
+            if (self.quick_result_state == 1):
+                print("You chose 'Lightning' for file " + filename[i])
+
+                continue
+            elif (self.quick_result_state == 2):
+
+                print("You chose 'no Lighning' for file " + filename[i])
+                self.quick_result= 0
+                continue
+
     def lightning(self):
-        print("You chose 'Lightning' for file " + filename[i])
+        self.quick_result_state = 1
 
     def noLighnting(self):
-        print("You chose 'no Lighning' for file " + filename[i])
+        self.quick_result_state = 2
 
     def close(self):
         window = tk.Toplevel(root)
@@ -75,10 +90,6 @@ class ApplicationGUI(tk.Frame):
 
         browseWindow.cancel_button = Button(browseWindow, text="Cancel", command=browseWindow.destroy)
         browseWindow.cancel_button.grid(row=5, column=2, padx='5', pady='5')
-        return browseWindow
-
-    def destroyWindow(window):
-        window.destroy()
 
     def browseImagePath(self):
         self.folder_path = filedialog.askdirectory(mustexist=True, title="Please specify image directory")
@@ -88,7 +99,8 @@ class ApplicationGUI(tk.Frame):
         self.folder_path = self.textEntry.get()
         if(os.path.isdir(self.folder_path) == True):
             print("Selected image source is now " + self.folder_path)
-            destroyWindow(browseWindow)
+            browseWindow.destroy() #FENSTER browseWindow muss geschlossen werden. Funktioniert nicht
+            
             dirListing = os.listdir(self.folder_path)
             for item in dirListing:
                 if ".jpg" in item:
@@ -97,9 +109,11 @@ class ApplicationGUI(tk.Frame):
             print("Please enter an existing directory")
 
     def showDetail(self):
-        return showDetail
-
-    def showPreview
+        detailWindow = tk.Toplevel(root)
+        detailWindow.heading = Label(detailWindow, text="Choose image parts covered with lightning")
+        self.preview_image = Canvas(master, width=1280, height=720)
+        self.preview_image.create_image(640, 360, anchor=CENTER, image=ImageTk.PhotoImage(Image.open(self.folder_path + self.filenameList[i])))
+        detailWindow.chooseKind = Radiobutton()
 
 
 
