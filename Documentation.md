@@ -138,13 +138,19 @@ MNIST Bilder sind:
 https://stackoverflow.com/questions/16373887/how-to-set-the-text-value-content-of-an-entry-widget-using-a-button-in-tkinter
 https://effbot.org/tkinterbook/grid.htm
 
+#### Montag, 29.04.2019
+https://stackoverflow.com/questions/4950359/how-to-close-toplevel-window-after-the-function-it-calls-completes
+https://stackoverflow.com/questions/40604233/draw-on-python-tkinter-canvas-using-mouse-and-obtain-points-to-a-list
+https://stackoverflow.com/questions/26646362/numpy-array-is-not-json-serializable
+
+
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MzQwNjUwMDgsLTIwNTE5MjcxODEsLT
-E1NTc1Nzc3MDIsLTE0ODQ0NjY4MjUsLTE0Mjc1NTM1NjksMTM4
-ODIzNjAwMiwtMTMzNzc3MTg3MCwxNzYyMjMwNDAyLDE3OTMxOD
-IyMjcsMzMyNjkxNjMsLTE0NzQ4NTA2ODgsNzQwNTY0OTUyLDQ5
-NjYzMjYxMSw1Njk2NDU4NjQsLTUwMTU1OTc3NiwtMTQ3MzU4NT
-cyMywtMjExNjI0MzkwOSwtNzE4MDczODIyLC0xODA5MTg2ODU4
-LDY4MjQ1OTAzXX0=
+eyJoaXN0b3J5IjpbLTI4OTM3NDc3OSwtMTUzNDA2NTAwOCwtMj
+A1MTkyNzE4MSwtMTU1NzU3NzcwMiwtMTQ4NDQ2NjgyNSwtMTQy
+NzU1MzU2OSwxMzg4MjM2MDAyLC0xMzM3NzcxODcwLDE3NjIyMz
+A0MDIsMTc5MzE4MjIyNywzMzI2OTE2MywtMTQ3NDg1MDY4OCw3
+NDA1NjQ5NTIsNDk2NjMyNjExLDU2OTY0NTg2NCwtNTAxNTU5Nz
+c2LC0xNDczNTg1NzIzLC0yMTE2MjQzOTA5LC03MTgwNzM4MjIs
+LTE4MDkxODY4NThdfQ==
 -->
