@@ -143,14 +143,18 @@ https://stackoverflow.com/questions/4950359/how-to-close-toplevel-window-after-t
 https://stackoverflow.com/questions/40604233/draw-on-python-tkinter-canvas-using-mouse-and-obtain-points-to-a-list
 https://stackoverflow.com/questions/26646362/numpy-array-is-not-json-serializable
 
+#### Montag, 20.05.2019
+https://stackoverflow.com/questions/2189800/length-of-an-integer-in-python
+https://stackoverflow.com/questions/5899497/checking-file-extension
+
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI4OTM3NDc3OSwtMTUzNDA2NTAwOCwtMj
-A1MTkyNzE4MSwtMTU1NzU3NzcwMiwtMTQ4NDQ2NjgyNSwtMTQy
-NzU1MzU2OSwxMzg4MjM2MDAyLC0xMzM3NzcxODcwLDE3NjIyMz
-A0MDIsMTc5MzE4MjIyNywzMzI2OTE2MywtMTQ3NDg1MDY4OCw3
-NDA1NjQ5NTIsNDk2NjMyNjExLDU2OTY0NTg2NCwtNTAxNTU5Nz
-c2LC0xNDczNTg1NzIzLC0yMTE2MjQzOTA5LC03MTgwNzM4MjIs
-LTE4MDkxODY4NThdfQ==
+eyJoaXN0b3J5IjpbNjUyNDg0NjQ2LC0yODkzNzQ3NzksLTE1Mz
+QwNjUwMDgsLTIwNTE5MjcxODEsLTE1NTc1Nzc3MDIsLTE0ODQ0
+NjY4MjUsLTE0Mjc1NTM1NjksMTM4ODIzNjAwMiwtMTMzNzc3MT
+g3MCwxNzYyMjMwNDAyLDE3OTMxODIyMjcsMzMyNjkxNjMsLTE0
+NzQ4NTA2ODgsNzQwNTY0OTUyLDQ5NjYzMjYxMSw1Njk2NDU4Nj
+QsLTUwMTU1OTc3NiwtMTQ3MzU4NTcyMywtMjExNjI0MzkwOSwt
+NzE4MDczODIyXX0=
 -->
