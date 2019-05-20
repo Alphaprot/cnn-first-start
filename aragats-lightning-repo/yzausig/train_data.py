@@ -45,8 +45,8 @@ class ApplicationGUI(tk.Frame):
             wait_variable(self.quick_result_state)
             if (self.quick_result_state == 1):
                 print("You chose 'Lightning' for file " + filename[i])
-
                 continue
+
             elif (self.quick_result_state == 2):
 
                 print("You chose 'no Lighning' for file " + filename[i])
@@ -100,7 +100,7 @@ class ApplicationGUI(tk.Frame):
         if(os.path.isdir(self.folder_path) == True):
             print("Selected image source is now " + self.folder_path)
             browseWindow.destroy() #FENSTER browseWindow muss geschlossen werden. Funktioniert nicht
-            
+
             dirListing = os.listdir(self.folder_path)
             for item in dirListing:
                 if ".jpg" in item:
