@@ -48,13 +48,16 @@ def removeBackground():
         refimg = imgpath + "/aragats-%04d.jpg" %ref
         print(imgpath)
         if(os.path.isfile(refimg)):
-            print("Klappt")
-            #reference = Image.open(refimg)
+            img_compare = Image.open(refimg)
+            print("Opening image no. %04d") %ref
+
+                for img in seq["images"]:
+                    infile = imgpath + "aragats-%04d.jpg" %img
+                    
+
         else:
             print("Invalid format or file not found!\n")
 
-        print(refimg +"\n")
-        #or img in seq['images']:
-        #input = imgpath + "aragats-" + imgnumber
+
 
 removeBackground()
