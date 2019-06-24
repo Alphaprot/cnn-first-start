@@ -147,14 +147,16 @@ https://stackoverflow.com/questions/26646362/numpy-array-is-not-json-serializabl
 https://stackoverflow.com/questions/2189800/length-of-an-integer-in-python
 https://stackoverflow.com/questions/5899497/checking-file-extension
 
+#### Montag, 24.06.2019
+https://visualstudiomagazine.com/articles/2014/01/01/how-to-standardize-data-for-neural-networks.aspx (Datennormalisierung)
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjUyNDg0NjQ2LC0yODkzNzQ3NzksLTE1Mz
-QwNjUwMDgsLTIwNTE5MjcxODEsLTE1NTc1Nzc3MDIsLTE0ODQ0
-NjY4MjUsLTE0Mjc1NTM1NjksMTM4ODIzNjAwMiwtMTMzNzc3MT
-g3MCwxNzYyMjMwNDAyLDE3OTMxODIyMjcsMzMyNjkxNjMsLTE0
-NzQ4NTA2ODgsNzQwNTY0OTUyLDQ5NjYzMjYxMSw1Njk2NDU4Nj
-QsLTUwMTU1OTc3NiwtMTQ3MzU4NTcyMywtMjExNjI0MzkwOSwt
-NzE4MDczODIyXX0=
+eyJoaXN0b3J5IjpbMjA0MTY0NTU4Niw2NTI0ODQ2NDYsLTI4OT
+M3NDc3OSwtMTUzNDA2NTAwOCwtMjA1MTkyNzE4MSwtMTU1NzU3
+NzcwMiwtMTQ4NDQ2NjgyNSwtMTQyNzU1MzU2OSwxMzg4MjM2MD
+AyLC0xMzM3NzcxODcwLDE3NjIyMzA0MDIsMTc5MzE4MjIyNywz
+MzI2OTE2MywtMTQ3NDg1MDY4OCw3NDA1NjQ5NTIsNDk2NjMyNj
+ExLDU2OTY0NTg2NCwtNTAxNTU5Nzc2LC0xNDczNTg1NzIzLC0y
+MTE2MjQzOTA5XX0=
 -->
