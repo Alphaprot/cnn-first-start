@@ -11,10 +11,17 @@ from getch import getch, pause
 
 json_config = "03_img.json"
 desiredArrayShape = '(3,3)'
+global trainingData
 
 def removeBackground():
-    print("Please specify input directory as an abs path:\n")
+    print("Please specify input directory as an abs path [or enter skip",
+    "to skip this step]:\n")
     imgpath = raw_input()
+    if imgpath.lower() == "skip":
+        print("Skipping")
+        operatingPrompt()
+        return
+
     if imgpath.endswith("/"):
         imgpath = imgpath[:-1] #.strip("/")
     valid_path = os.path.isdir(imgpath)
@@ -74,9 +81,45 @@ def removeBackground():
     print(str(counter) + " image files have been successfully converted!\n")
     print("The results have been saved to " + imgpath + "/bg_substraction/\n")
     print("")
+    operatingPrompt()
+
+def operatingPrompt():
+    question = "Do you want to:\n"
+    option1 = "[1] Create training data from the converted images\n"
+    option2 = "[2] Train neural network by providing existing training data as .npy\n"
+    option3 = "[3] Display images\n"
+    options = [question, option1, option2, option3]
+
+
+
+    prompt = [" [Enter digit] "]
+    validInput =    {"1":1,
+                    "2":2,
+                    "3":3}
+
+    while True:
+        print(*options + prompt)
+        choice = raw_input().lower()
+        if choice in validInput:
+            validInput = choice
+            break
+        else:
+            print("Please respond with a number from 1 to 3!\n")
+
+    if choice == "1":
+        trainDataset()
+    elif choice == "2":
+        loadTrainData()
+    elif choice == "3":
+        exit()
 
 def trainDataset():
-    if trainingData.shape
+    if trainingData.shape == (3, ):
+        print("Okay, cool")
+    else:
+        print("Only an array of the shape (3, ) can be used where \n 1st column = filename \n",
+        "2nd column = label \n 3rd column = type of lightning \n 4th column = area of image",
+         "with lightning \n \nSee the documentation for further instructions!")
 def loadTrainData():
     actionComplete = False
     while not actionComplete():
@@ -88,9 +131,9 @@ def loadTrainData():
         else:
             if trainFile.endswith(".npy"):
                 print("Selected training file: " + trainFile + "\n")
-                global trainingData = np.load(trainFile)
+                trainingData = np.load(trainFile)
                 actionComplete = True
-                break()
+                break
             else:
                 print("Please select a valid '.npy' file!")
     trainCNN()
@@ -99,32 +142,7 @@ def trainCNN():
     print("Nothing here")
 
 removeBackground()
-question = "Do you want to:\n"
-option1 = "[1] Create training data from the converted images\n"
-option2 = "[2] Train neural network by providing existing training data as .npy\n"
-option3 = "[3] Display images\n"
-options = [option1, option2, option3]
 
-
-prompt = " [Enter digit] "
-choice = raw_input().lower()
-validInput = {"1":1,
-                "2":2,
-                "3":3}
-
-while True:
-    print(*options + prompt)
-    if choice in validInput:
-        return valid[choice]
-    else:
-        print("Please respond with 'yes' or 'no' (or 'y' or 'n')\n")
-
-if validInput == 1:
-    trainDataset();
-if validInput == 2;
-    loadTrainData();
-if validInput == 3:
-    exit()
 
 
 '''    validInput = {"1": True, "y": True,
