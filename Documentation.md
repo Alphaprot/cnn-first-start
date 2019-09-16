@@ -150,13 +150,18 @@ https://stackoverflow.com/questions/5899497/checking-file-extension
 #### Montag, 24.06.2019
 https://visualstudiomagazine.com/articles/2014/01/01/how-to-standardize-data-for-neural-networks.aspx (Datennormalisierung)
 
+#### Montag, 16.09.2019
+https://build-system.fman.io/pyqt5-tutorial
+https://www.learnpyqt.com/courses/start/layouts/
+
+PyQt in eigene Klasse? 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0MTY0NTU4Niw2NTI0ODQ2NDYsLTI4OT
-M3NDc3OSwtMTUzNDA2NTAwOCwtMjA1MTkyNzE4MSwtMTU1NzU3
-NzcwMiwtMTQ4NDQ2NjgyNSwtMTQyNzU1MzU2OSwxMzg4MjM2MD
-AyLC0xMzM3NzcxODcwLDE3NjIyMzA0MDIsMTc5MzE4MjIyNywz
-MzI2OTE2MywtMTQ3NDg1MDY4OCw3NDA1NjQ5NTIsNDk2NjMyNj
-ExLDU2OTY0NTg2NCwtNTAxNTU5Nzc2LC0xNDczNTg1NzIzLC0y
-MTE2MjQzOTA5XX0=
+eyJoaXN0b3J5IjpbLTIwMTgzMjQ3NiwyMDQxNjQ1NTg2LDY1Mj
+Q4NDY0NiwtMjg5Mzc0Nzc5LC0xNTM0MDY1MDA4LC0yMDUxOTI3
+MTgxLC0xNTU3NTc3NzAyLC0xNDg0NDY2ODI1LC0xNDI3NTUzNT
+Y5LDEzODgyMzYwMDIsLTEzMzc3NzE4NzAsMTc2MjIzMDQwMiwx
+NzkzMTgyMjI3LDMzMjY5MTYzLC0xNDc0ODUwNjg4LDc0MDU2ND
+k1Miw0OTY2MzI2MTEsNTY5NjQ1ODY0LC01MDE1NTk3NzYsLTE0
+NzM1ODU3MjNdfQ==
 -->
