@@ -7,13 +7,20 @@ import subprocess
 import glob
 import json
 import math
+import random
 import tensorflow as tf
 from PIL import Image, ImageChops
 from getch import getch, pause
+from PyQt5.QtWidgets import QApplication, QLabel, QSlider, QProgressBar, QPushButton, QCheckBox
+from PyQT5.QtGui import QPixmap
 
+#Settings
 json_config = "03_img.json"
-global trainingDat
+trainDataRatio = 0.1 #Percentage of images used for training in relation to all images (where 1 equals 100%)
+
+global trainingData
 trainingData = np.zeros((3,1))
+app = QApplication([])
 
 def operatingPrompt(path):
     question = "Do you want to:\n"
@@ -45,7 +52,27 @@ def operatingPrompt(path):
         showImages(path)
 
 def createTrainDataset():
-    print("foo")
+    totalFiles = len([name for name in os.listdir(outputPath) if os.path.isfile(name)])
+    reviewBuffer = []
+    progress = 0
+    for x in range(0, (trainDataRatio*totalFiles)):
+        img = Image.open(random.choice([x for x in os.listdir(outputPath) if os.path.isfile(os.path.join(outputPath, x))])) #Hinweis: Möglichkeit, dass gleiches Bild zweimal angezeigt wird! Verhindern?
+        reviewBuffer.append(img)
+    app.setStyle('Fusion')
+    img_label = QLabel()
+    pixmap = QPixmap(reviewBuffer[progress])
+    img_label.setPixmap(pixmap)
+    button_next = QPushButton('Next')
+    button_quit = QPushButton('Cancel')
+    progBar = QProgressBar
+    progBar.setMinimum = 0
+    progBar.setMaximum = totalFiles*trainDataRatio
+    button_next.clicked.connect(ProbeSubmissionIntegrity)
+    app.exec_()
+
+def ProbeSubmissionIntegrity():
+    if ():
+        return
 
 def loadTrainData():
     print("Please specify the abs path to the training data file:\n")
