@@ -11,7 +11,7 @@ import random
 import tensorflow as tf
 from PIL import Image, ImageChops
 from getch import getch, pause
-from PyQt5.QtWidgets import QApplication, QLabel, QSlider, QProgressBar, QPushButton, QCheckBox
+from PyQt5.QtWidgets import QApplication, QLabel, QSlider, QProgressBar, QRadioButton, QPushButton, QCheckBox, QMessageBox, QGridLayout, QGroupBox, QVBoxLayout, QHBoxLayout
 from PyQT5.QtGui import QPixmap
 
 #Settings
@@ -56,23 +56,84 @@ def createTrainDataset():
     reviewBuffer = []
     progress = 0
     for x in range(0, (trainDataRatio*totalFiles)):
-        img = Image.open(random.choice([x for x in os.listdir(outputPath) if os.path.isfile(os.path.join(outputPath, x))])) #Hinweis: Möglichkeit, dass gleiches Bild zweimal angezeigt wird! Verhindern?
+        img = Image.open(random.choice([x for x in os.listdir(outputPath) if os.path.isfile(os.path.join(outputPath, x))]))
+        #Hinweis: Möglichkeit, dass gleiches Bild zweimal angezeigt wird! Verhindern?
         reviewBuffer.append(img)
     app.setStyle('Fusion')
+    grid = QGridLayout()
+    group1 = QGroupBox("Picture contains lightning:")
+    lightningYes = QRadioButton("Yes")
+    lightningNo = QRadioButton("No")
+    group2 = QGroupBox("Type of lightning (please check all applicable):")
+    sky2gnd = QCheckBox("Sky to ground")
+    sky2sky = QCheckBox("Sky to sky")
+    burst = QCheckBox("Burst")
+    group2.setEnabled(False)
+
     img_label = QLabel()
     pixmap = QPixmap(reviewBuffer[progress])
     img_label.setPixmap(pixmap)
     button_next = QPushButton('Next')
     button_quit = QPushButton('Cancel')
-    progBar = QProgressBar
+    progBar = QProgressBar()
     progBar.setMinimum = 0
     progBar.setMaximum = totalFiles*trainDataRatio
-    button_next.clicked.connect(ProbeSubmissionIntegrity)
+
+    group1Layout = QVBoxLayout()
+    group1Layout.addWidget(lightningYes)
+    group1Layout.addWidget(lightningNo)
+    group1.setLayout(group1Layout)
+
+    group2Layout = QVBoxLayout()
+    group2Layout.addWidget(sky2gnd)
+    group2Layout.addWidget(sky2sky)
+    group2Layout.addWidget(burst)
+    group2.setLayout(group2Layout)
+
+    group3Layout = QHBoxLayout()
+    group3Layout.addWidget(button_next)
+    group3Layout.addWidget(button_quit)
+    group3.setLayout(group3Layout)
+
+    grid.addWidget(img_label, 0, 1)
+    grid.addWidget(group1, 1, 1)
+    grid.addWidget(group2, 1, 2)
+    grid.addWidget(progBar, 0, 3)
+    grid.addWidget(group3, 1, 3)
+
+    lightningYes.toggled.connect(group1Choice())
+    lightningNo.toggled.connect(group1Choice())
+    button_next.clicked.connect(ProbeSubmissionIntegrity())
+    button_quit.clicked.connect(quitDialog())
     app.exec_()
 
+def group1Choice():
+    if lightningYes.isChecked():
+        print("User selected 'lightning' \n Enabling further tasks")
+        group2.setEnabled(True)
+        group4.setEnabled(True)
+    if lightningNo.isChecked():
+        print("User slected 'no lightning'")
+
 def ProbeSubmissionIntegrity():
-    if ():
+    if lightningNo.isChecked():
         return
+    elif lightningYes.isChecked():
+        if sky2gnd.isChecked() or sky2sky.isChecked() or burst.isChecked():
+            return
+        else:
+            showNoIntegrityWarning()
+    else:
+        showNoIntegrityWarning()
+
+def showNoIntegrityWarning():
+    msg = QMessageBox()
+    msg.setIcon(QMessageBox.Warning)
+    msg.setText("Please provide every requested information")
+    msg.setInformativeText("The missing fields are highlighted")
+    msg.setWindowTitle("Missing entries detected!")
+    msg.setStandardButtons(QMessageBox.Ok)
+    msg.buttonClicked.connect(highlightMissing())
 
 def loadTrainData():
     print("Please specify the abs path to the training data file:\n")
@@ -100,7 +161,7 @@ def loadTrainData():
     else:
         print("Only an array of the shape (4, n) can be used where \n 1st column = filename \n",
         "2nd column = label \n 3rd column = type of lightning \n 4th column = area of image ",
-        "with lightning \n \nSee the documentation for further instructions!")
+        "with lightning \n \nSee the documentation for further information!")
 
 
 def trainCNN():
