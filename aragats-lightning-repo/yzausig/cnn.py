@@ -52,6 +52,7 @@ def operatingPrompt(path):
         showImages(path)
 
 def createTrainDataset():
+
     totalFiles = len([name for name in os.listdir(outputPath) if os.path.isfile(name)])
     reviewBuffer = []
     progress = 0
@@ -69,6 +70,7 @@ def createTrainDataset():
     sky2sky = QCheckBox("Sky to sky")
     burst = QCheckBox("Burst")
     group2.setEnabled(False)
+    group3 = QGroupBox()
 
     img_label = QLabel()
     pixmap = QPixmap(reviewBuffer[progress])
@@ -101,39 +103,57 @@ def createTrainDataset():
     grid.addWidget(progBar, 0, 3)
     grid.addWidget(group3, 1, 3)
 
-    lightningYes.toggled.connect(group1Choice())
-    lightningNo.toggled.connect(group1Choice())
-    button_next.clicked.connect(ProbeSubmissionIntegrity())
-    button_quit.clicked.connect(quitDialog())
+    lightningYes.toggled.connect(group1Choice)
+    lightningNo.toggled.connect(group1Choice)
+    button_next.clicked.connect(ProbeSubmissionIntegrity)
+    button_quit.clicked.connect(quitDialog)
     app.exec_()
 
-def group1Choice():
-    if lightningYes.isChecked():
+    def group1Choice():
+      if lightningYes.isChecked():
         print("User selected 'lightning' \n Enabling further tasks")
         group2.setEnabled(True)
-        group4.setEnabled(True)
-    if lightningNo.isChecked():
+        overlay.setEnabled(True)
+      if lightningNo.isChecked():
         print("User slected 'no lightning'")
 
-def ProbeSubmissionIntegrity():
-    if lightningNo.isChecked():
-        return
-    elif lightningYes.isChecked():
-        if sky2gnd.isChecked() or sky2sky.isChecked() or burst.isChecked():
+    def ProbeSubmissionIntegrity():
+        if lightningNo.isChecked():
+            saveTrainData()
             return
+        elif lightningYes.isChecked():
+            if sky2gnd.isChecked() or sky2sky.isChecked() or burst.isChecked():
+                saveTrainData()
+                return
+            else:
+                showNoIntegrityWarning()
         else:
             showNoIntegrityWarning()
-    else:
-        showNoIntegrityWarning()
+    def quitDialog():
+        print("foo")        
 
-def showNoIntegrityWarning():
-    msg = QMessageBox()
-    msg.setIcon(QMessageBox.Warning)
-    msg.setText("Please provide every requested information")
-    msg.setInformativeText("The missing fields are highlighted")
-    msg.setWindowTitle("Missing entries detected!")
-    msg.setStandardButtons(QMessageBox.Ok)
-    msg.buttonClicked.connect(highlightMissing())
+    def showNoIntegrityWarning():
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Warning)
+        msg.setText("Please provide every requested information")
+        msg.setInformativeText("The missing fields are highlighted")
+        msg.setWindowTitle("Missing entries detected!")
+        msg.setStandardButtons(QMessageBox.Ok)
+        msg.buttonClicked.connect(highlightMissing)
+    
+    def highlightMissing():
+        print("Not implemented yet")
+
+    def saveTrainData():
+        if lightningYes:
+            if sky2gnd.isChecked() and sky2sky.isChecked():
+                label = 3
+            elif sky2gnd.isChecked():
+                label = 1
+            else:
+                label = 2    
+        else: 
+            label = 0
 
 def loadTrainData():
     print("Please specify the abs path to the training data file:\n")
