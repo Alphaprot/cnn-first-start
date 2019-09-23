@@ -9,18 +9,23 @@ import json
 import math
 import random
 import tensorflow as tf
+from keras.models import Sequential
+from keras.layers import Dense, Dropout, Flatten; BatchNormalization, Activation
+from keras.layers.convolutional import Conv2D, MaxPooling2D
+from keras.constraints import maxnorm
+from keras.utils import np_utils
 from PIL import Image, ImageChops
 from getch import getch, pause
 from PyQt5.QtWidgets import QApplication, QLabel, QSlider, QProgressBar, QRadioButton, QPushButton, QCheckBox, QMessageBox, QGridLayout, \
         QGroupBox, QVBoxLayout, QHBoxLayout
-from PyQT5.QtGui import QPixmap, QPen, QColor
+from PyQt5.QtGui import QPixmap, QPen, QColor
 
 #Settings
 json_config = "03_img.json"
 trainDataRatio = 0.1 #Percentage of images used for training in relation to all images (where 1 equals 100%)
 
 global trainingData
-trainingData = np.zeros((3,1))
+trainingData = np.zeros((4,1))
 app = QApplication([])
 
 def operatingPrompt(path):
@@ -118,6 +123,24 @@ def createTrainDataset():
       if lightningNo.isChecked():
         print("User slected 'no lightning'")
 
+    def SelectTool():
+        rubberBand = QRubberBand(QRubberBand.Rectangle)
+        origin = QPoint()
+
+        def mousePressEvent(event):
+            if event.button() == Qt.LeftButton:
+                origin = QPoint(event.pos())
+                rubberBand.setGeometry(QRect(origin, QSize()))
+                rubberBand.show()
+
+        def mouseMoveEvent(event):
+            if not orgin.isNull():
+                rubberBand.setGeometry(QRect(origin, event.pos()).normalized())
+
+        def mouseReleaseEvent(event):
+            if event.button() == Qt.LeftButton:
+                rubberBand.hide()
+
     def ProbeSubmissionIntegrity():
         if lightningNo.isChecked():
             saveTrainData()
@@ -131,7 +154,7 @@ def createTrainDataset():
         else:
             showNoIntegrityWarning()
     def quitDialog():
-        print("foo")        
+        print("foo")
 
     def showNoIntegrityWarning():
         msg = QMessageBox()
@@ -141,7 +164,7 @@ def createTrainDataset():
         msg.setWindowTitle("Missing entries detected!")
         msg.setStandardButtons(QMessageBox.Ok)
         msg.buttonClicked.connect(highlightMissing)
-    
+
     def highlightMissing():
         print("Not implemented yet")
 
@@ -152,9 +175,14 @@ def createTrainDataset():
             elif sky2gnd.isChecked():
                 label = 1
             else:
-                label = 2    
-        else: 
+                label = 2
+        else:
             label = 0
+        img_path = reviewBuffer[progress].filename
+        img_name = os.path.basename(img_path)
+        trainingData = np.append((img_name, filename, xPos, yPos))
+
+
 
     '''def drawOverlay(): # Inspired by snow's answer on  https://stackoverflow.com/questions/39614777/how-to-draw-a-proper-grid-on-pyqt
         gridLines = []
@@ -193,8 +221,8 @@ def loadTrainData():
             trainCNN()
         else:
             print("Only an array of the shape (4, n) can be used where \n 1st column = filename \n",
-            "2nd column = label \n 3rd column = type of lightning \n 4th column = area of image",
-            "with lightning \n \nSee the documentation for further instructions!")
+            "2nd column = label \n 3rd column = xPos of area \n 4th column = yPos of area",
+            "\n \nSee the documentation for further instructions!")
     else:
         print("Only an array of the shape (4, n) can be used where \n 1st column = filename \n",
         "2nd column = label \n 3rd column = type of lightning \n 4th column = area of image ",
