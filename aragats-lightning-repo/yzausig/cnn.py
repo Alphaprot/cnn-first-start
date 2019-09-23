@@ -11,8 +11,9 @@ import random
 import tensorflow as tf
 from PIL import Image, ImageChops
 from getch import getch, pause
-from PyQt5.QtWidgets import QApplication, QLabel, QSlider, QProgressBar, QRadioButton, QPushButton, QCheckBox, QMessageBox, QGridLayout, QGroupBox, QVBoxLayout, QHBoxLayout
-from PyQT5.QtGui import QPixmap
+from PyQt5.QtWidgets import QApplication, QLabel, QSlider, QProgressBar, QRadioButton, QPushButton, QCheckBox, QMessageBox, QGridLayout, \
+        QGroupBox, QVBoxLayout, QHBoxLayout
+from PyQT5.QtGui import QPixmap, QPen, QColor
 
 #Settings
 json_config = "03_img.json"
@@ -155,6 +156,22 @@ def createTrainDataset():
         else: 
             label = 0
 
+    '''def drawOverlay(): # Inspired by snow's answer on  https://stackoverflow.com/questions/39614777/how-to-draw-a-proper-grid-on-pyqt
+        gridLines = []
+        setSceneRect(0, 0, img_label.width)
+
+        for line in gridLines(visible = True)
+            line.setVisible(visible)
+
+    class NewLabel(QLabel):
+        def __init__(self, text):
+            super(NewLabel, self).__init__(text)
+
+        def resizeEvent(self, event):
+            width = self.width()
+            height = self.height()
+'''
+# RUBBERBAND! https://wiki.python.org/moin/PyQt/Selecting%20a%20region%20of%20a%20widget
 def loadTrainData():
     print("Please specify the abs path to the training data file:\n")
     actionComplete = False
