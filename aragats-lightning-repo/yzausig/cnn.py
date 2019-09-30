@@ -2,6 +2,7 @@ from __future__ import print_function
 
 import numpy as np
 import os
+import sys
 import platform
 import subprocess
 import glob
@@ -10,7 +11,7 @@ import math
 import random
 import tensorflow as tf
 from keras.models import Sequential
-from keras.layers import Dense, Dropout, Flatten; BatchNormalization, Activation
+from keras.layers import Dense, Dropout, Flatten, BatchNormalization, Activation
 from keras.layers.convolutional import Conv2D, MaxPooling2D
 from keras.constraints import maxnorm
 from keras.utils import np_utils
@@ -19,6 +20,7 @@ from getch import getch, pause
 from PyQt5.QtWidgets import QApplication, QLabel, QSlider, QProgressBar, QRadioButton, QPushButton, QCheckBox, QMessageBox, QGridLayout, \
         QGroupBox, QVBoxLayout, QHBoxLayout
 from PyQt5.QtGui import QPixmap, QPen, QColor
+from termios import tcflush, TCIFLUSH
 
 #Settings
 json_config = "03_img.json"
@@ -28,7 +30,20 @@ global trainingData
 trainingData = np.zeros((4,1))
 app = QApplication([])
 
-def operatingPrompt(path):
+def PathValidator(path):
+    valid_path = os.path.isdir(path)
+    if path.endswith("/"):
+        path = path[:-1] #.strip("/")
+    while not valid_path:
+        print("Invalid path. Please specify a valid path")
+        return False
+        break
+    else:
+        print("Input directory is now" + path + "\n")
+        return True
+
+
+def operatingPrompt(outputPath):
     question = "Do you want to:\n"
     option1 = "[1] Create training data from the converted images\n"
     option2 = "[2] Train neural network by providing existing training data as .npy\n"
@@ -48,23 +63,36 @@ def operatingPrompt(path):
             break
         else:
             print("Please respond with a number from 1 to 3!\n")
+            tcflush(sys.stdin, TCIFLUSH)
             continue
 
     if choice == "1":
-        createTrainDataset()
+        if not outputPath:
+            print("You skipped the previous step so no images have been converted (and thus cannot be " \
+             "used for training!\n")
+            operatingPrompt(None)
+        else:
+            createTrainDataset(outputPath)
     elif choice == "2":
+        print(outputPath)
         loadTrainData()
     elif choice == "3":
-        showImages(path)
+        if not outputPath:
+            print("No images have been converted because you skipped the previous step.")
+            operatingPrompt(None)
+        else:
+            showImages(outputPath)
 
-def createTrainDataset():
+def createTrainDataset(outputPath):
 
-    totalFiles = len([name for name in os.listdir(outputPath) if os.path.isfile(name)])
+    totalFiles = len([name for name in os.listdir(outputPath) if os.path.isfile(outputPath + name)])
+    print(totalFiles)
     reviewBuffer = []
     progress = 0
-    for x in range(0, (trainDataRatio*totalFiles)):
-        img = Image.open(random.choice([x for x in os.listdir(outputPath) if os.path.isfile(os.path.join(outputPath, x))]))
+    for x in range(0, int(trainDataRatio*totalFiles)):
+        img = Image.open(outputPath + random.choice([img_file for img_file in os.listdir(outputPath) if os.path.isfile(os.path.join(outputPath, img_file))]))
         #Hinweis: Möglichkeit, dass gleiches Bild zweimal angezeigt wird! Verhindern?
+        print(img)
         reviewBuffer.append(img)
     app.setStyle('Fusion')
     grid = QGridLayout()
@@ -79,6 +107,7 @@ def createTrainDataset():
     group3 = QGroupBox()
 
     img_label = QLabel()
+    print(reviewBuffer)
     pixmap = QPixmap(reviewBuffer[progress])
     img_label.setPixmap(pixmap)
     button_next = QPushButton('Next')
@@ -242,23 +271,18 @@ def showImages(path):
 
 print("Please specify input directory as an abs path [or enter skip",
 "to skip this step]:\n")
-pathCheck = False
-while pathCheck == False:
+while True:
     imgpath = input()
+    if PathValidator(imgpath):
+        break
     if imgpath.lower() == "skip":
-        print("Skipping")
-        operatingPrompt(None)
-
-    if imgpath.endswith("/"):
-        imgpath = imgpath[:-1] #.strip("/")
-    valid_path = os.path.isdir(imgpath)
-    while not valid_path:
-        print("Invalid path. Please specify a valid path")
-        break
-    else:
-        print("Input directory is now" + imgpath + "\n")
-        pathCheck = True
-        break
+        print("Skipping...\n"+
+        "Provide a path to already converted images or leave empty\n")
+        imgpath_secondary = input().lower()
+        if PathValidator(imgpath_secondary):
+            operatingPrompt(imgpath_secondary)
+        else:
+            operatingPrompt(None)
 
 with open(json_config) as fconf:
     data = json.load(fconf)
@@ -298,10 +322,10 @@ for seq in seqlist:
             print(str("Opening image no. %04d\n") % img)
             infile = imgpath + "/aragats-%04d.jpg" % img
             inv_outfile = imgpath + "/bg_substraction/" + "1_aragats-%04d.jpg" % img
-            input = Image.open(infile)
-            process = ImageChops.subtract(input, img_compare)
-            out = ImageChops.invert(process)
-            out.save(inv_outfile)
+            imgin = Image.open(infile)
+            process = ImageChops.subtract(imgin, img_compare)
+            imgout = ImageChops.invert(process)
+            imgout.save(inv_outfile)
 
     else:
         print("Invalid format or file not found!\n")
