@@ -16,10 +16,9 @@ from keras.layers.convolutional import Conv2D, MaxPooling2D
 from keras.constraints import maxnorm
 from keras.utils import np_utils
 from PIL import Image, ImageChops
+from PIL.ImageQt import ImageQt
 from getch import getch, pause
-from PyQt5.QtWidgets import QApplication, QLabel, QSlider, QProgressBar, QRadioButton, QPushButton, QCheckBox, QMessageBox, QGridLayout, \
-        QGroupBox, QVBoxLayout, QHBoxLayout
-from PyQt5.QtGui import QPixmap, QPen, QColor
+from PyQt5 import QtWidgets, QtGui, QtCore
 from termios import tcflush, TCIFLUSH
 
 #Settings
@@ -28,7 +27,6 @@ trainDataRatio = 0.1 #Percentage of images used for training in relation to all 
 
 global trainingData
 trainingData = np.zeros((4,1))
-app = QApplication([])
 
 def PathValidator(path):
     valid_path = os.path.isdir(path)
@@ -36,14 +34,14 @@ def PathValidator(path):
         path = path[:-1] #.strip("/")
     while not valid_path:
         print("Invalid path. Please specify a valid path")
-        return False
-        break
+        return None
     else:
         print("Input directory is now" + path + "\n")
-        return True
+        return path
+        
 
 
-def operatingPrompt(outputPath):
+def operatingPrompt(path):
     question = "Do you want to:\n"
     option1 = "[1] Create training data from the converted images\n"
     option2 = "[2] Train neural network by providing existing training data as .npy\n"
@@ -67,167 +65,183 @@ def operatingPrompt(outputPath):
             continue
 
     if choice == "1":
-        if not outputPath:
+        if not path:
+            print(path)
             print("You skipped the previous step so no images have been converted (and thus cannot be " \
              "used for training!\n")
             operatingPrompt(None)
         else:
-            createTrainDataset(outputPath)
+            createTrainDataset(path)
     elif choice == "2":
-        print(outputPath)
+        print(path)
         loadTrainData()
     elif choice == "3":
-        if not outputPath:
+        if not path:
             print("No images have been converted because you skipped the previous step.")
             operatingPrompt(None)
         else:
-            showImages(outputPath)
+            showImages(path)
 
-def createTrainDataset(outputPath):
+def createTrainDataset(path):
+    app = QtWidgets.QApplication(sys.argv)
+    gui = Window(path)
+    gui.setupGui()
+    gui.show()
+    sys.exit(app.exec_())
 
-    totalFiles = len([name for name in os.listdir(outputPath) if os.path.isfile(outputPath + name)])
-    print(totalFiles)
-    reviewBuffer = []
-    progress = 0
-    for x in range(0, int(trainDataRatio*totalFiles)):
-        img = Image.open(outputPath + random.choice([img_file for img_file in os.listdir(outputPath) if os.path.isfile(os.path.join(outputPath, img_file))]))
-        #Hinweis: Möglichkeit, dass gleiches Bild zweimal angezeigt wird! Verhindern?
-        print(img)
-        reviewBuffer.append(img)
-    app.setStyle('Fusion')
-    grid = QGridLayout()
-    group1 = QGroupBox("Picture contains lightning:")
-    lightningYes = QRadioButton("Yes")
-    lightningNo = QRadioButton("No")
-    group2 = QGroupBox("Type of lightning (please check all applicable):")
-    sky2gnd = QCheckBox("Sky to ground")
-    sky2sky = QCheckBox("Sky to sky")
-    burst = QCheckBox("Burst")
-    group2.setEnabled(False)
-    group3 = QGroupBox()
+class Window(QtWidgets.QMainWindow):
+    def __init__(self, path):
+        super(Window, self).__init__()
+        self.outputPath = path
+        self.totalFiles = len([name for name in os.listdir(self.outputPath) if os.path.isfile(os.path.join(self.outputPath, name))])
+        print(self.totalFiles)
+        self.reviewBuffer = []
+        self.progress = 0
+  
+    def setupGui(self):
+        for self.x in range(0, int(trainDataRatio*self.totalFiles)):
+            self.img = Image.open(self.outputPath + "/" + random.choice([name for name in os.listdir(self.outputPath) if os.path.isfile(os.path.join(self.outputPath, name))]))
+            #Hinweis: Möglichkeit, dass gleiches Bild zweimal angezeigt wird! Verhindern?
+            self.reviewBuffer.append(self.img)
+        self.grid = QtWidgets.QGridLayout(self)
+        self.setLayout = self.grid
+        self.group1 = QtWidgets.QGroupBox("Picture contains lightning:")
+        self.lightningYes = QtWidgets.QRadioButton("Yes")
+        self.lightningNo = QtWidgets.QRadioButton("No")
+        self.group2 = QtWidgets.QGroupBox("Type of lightning (please check all applicable):")
+        self.sky2gnd = QtWidgets.QCheckBox("Sky to ground")
+        self.sky2sky = QtWidgets.QCheckBox("Sky to sky")
+        self.burst = QtWidgets.QCheckBox("Burst")
+        self.selectToolButton = QtWidgets.QPushButton()
+        self.selectToolButton.setEnabled(False)
+        self.group2.setEnabled(False)
+        self.group3 = QtWidgets.QGroupBox()
 
-    img_label = QLabel()
-    print(reviewBuffer)
-    pixmap = QPixmap(reviewBuffer[progress])
-    img_label.setPixmap(pixmap)
-    button_next = QPushButton('Next')
-    button_quit = QPushButton('Cancel')
-    progBar = QProgressBar()
-    progBar.setMinimum = 0
-    progBar.setMaximum = totalFiles*trainDataRatio
+        self.img_label = QtWidgets.QLabel()
+        print(self.progress)
+        print(self.outputPath)
+        print(len(self.reviewBuffer))
+        self.currentImg = ImageQt(self.reviewBuffer[self.progress])
+        self.pixmap = QtGui.QPixmap.fromImage(self.currentImg)
+        self.img_label.setPixmap(self.pixmap)
+        self.button_next = QtWidgets.QPushButton('Next')
+        self.button_quit = QtWidgets.QPushButton('Cancel')
+        self.progBar = QtWidgets.QProgressBar()
+        self.progBar.setMinimum = 0
+        self.progBar.setMaximum = self.totalFiles*trainDataRatio
 
-    group1Layout = QVBoxLayout()
-    group1Layout.addWidget(lightningYes)
-    group1Layout.addWidget(lightningNo)
-    group1.setLayout(group1Layout)
+        self.group1Layout = QtWidgets.QVBoxLayout()
+        self.group1Layout.addWidget(self.lightningYes)
+        self.group1Layout.addWidget(self.lightningNo)
+        self.group1.setLayout(self.group1Layout)
 
-    group2Layout = QVBoxLayout()
-    group2Layout.addWidget(sky2gnd)
-    group2Layout.addWidget(sky2sky)
-    group2Layout.addWidget(burst)
-    group2.setLayout(group2Layout)
+        self.group2Layout = QtWidgets.QVBoxLayout()
+        self.group2Layout.addWidget(self.sky2gnd)
+        self.group2Layout.addWidget(self.sky2sky)
+        self.group2Layout.addWidget(self.burst)
+        self.group2.setLayout(self.group2Layout)
 
-    group3Layout = QHBoxLayout()
-    group3Layout.addWidget(button_next)
-    group3Layout.addWidget(button_quit)
-    group3.setLayout(group3Layout)
+        self.group3Layout = QtWidgets.QHBoxLayout()
+        self.group3Layout.addWidget(self.button_next)
+        self.group3Layout.addWidget(self.button_quit)
+        self.group3.setLayout(self.group3Layout)
 
-    grid.addWidget(img_label, 0, 1)
-    grid.addWidget(group1, 1, 1)
-    grid.addWidget(group2, 1, 2)
-    grid.addWidget(progBar, 0, 3)
-    grid.addWidget(group3, 1, 3)
+        self.grid.addWidget(self.img_label, 0, 1)
+        self.grid.addWidget(self.group1, 1, 1)
+        self.grid.addWidget(self.group2, 1, 2)
+        self.grid.addWidget(self.progBar, 0, 3)
+        self.grid.addWidget(self.group3, 1, 3)
 
-    lightningYes.toggled.connect(group1Choice)
-    lightningNo.toggled.connect(group1Choice)
-    button_next.clicked.connect(ProbeSubmissionIntegrity)
-    button_quit.clicked.connect(quitDialog)
-    app.exec_()
+        def SelectTool(self):
+            self.rubberBand = QtWidgets.QRubberBand(QtWidgets.QRubberBand.Rectangle)
+            self.origin = QtWidgets.QPoint()
 
-    def group1Choice():
-      if lightningYes.isChecked():
-        print("User selected 'lightning' \n Enabling further tasks")
-        group2.setEnabled(True)
-        overlay.setEnabled(True)
-      if lightningNo.isChecked():
-        print("User slected 'no lightning'")
+            def mousePressEvent(self, event):
+                if event.button() == QtGui.MouseButton.LeftButton:
+                    self.origin = QtGui.QPoint(event.pos())
+                    self.rubberBand.setGeometry(QtGui.QRect(self.origin, QtGui.QSize()))
+                    self.rubberBand.show()
 
-    def SelectTool():
-        rubberBand = QRubberBand(QRubberBand.Rectangle)
-        origin = QPoint()
+            def mouseMoveEvent(self, event):
+                if not self.orgin.isNull():
+                    self.rubberBand.setGeometry(QtGui.QRect(self.origin, event.pos()).normalized())
 
-        def mousePressEvent(event):
-            if event.button() == Qt.LeftButton:
-                origin = QPoint(event.pos())
-                rubberBand.setGeometry(QRect(origin, QSize()))
-                rubberBand.show()
+            def mouseReleaseEvent(self, event):
+                if event.button() == QtGui.MouseButton.LeftButton:
+                    self.rubberBand.hide()
 
-        def mouseMoveEvent(event):
-            if not orgin.isNull():
-                rubberBand.setGeometry(QRect(origin, event.pos()).normalized())
-
-        def mouseReleaseEvent(event):
-            if event.button() == Qt.LeftButton:
-                rubberBand.hide()
-
-    def ProbeSubmissionIntegrity():
-        if lightningNo.isChecked():
-            saveTrainData()
-            return
-        elif lightningYes.isChecked():
-            if sky2gnd.isChecked() or sky2sky.isChecked() or burst.isChecked():
-                saveTrainData()
+        def ProbeSubmissionIntegrity(self):
+            if self.lightningNo.isChecked():
+                saveTrainData(self)
                 return
+            elif self.lightningYes.isChecked():
+                if self.sky2gnd.isChecked() or self.sky2sky.isChecked() or self.burst.isChecked():
+                    saveTrainData(self)
+                    return
+                else:
+                    showNoIntegrityWarning(self)
             else:
-                showNoIntegrityWarning()
-        else:
-            showNoIntegrityWarning()
-    def quitDialog():
-        print("foo")
+                showNoIntegrityWarning(self)
+        def quitDialog(self):
+            print("foo")
 
-    def showNoIntegrityWarning():
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Warning)
-        msg.setText("Please provide every requested information")
-        msg.setInformativeText("The missing fields are highlighted")
-        msg.setWindowTitle("Missing entries detected!")
-        msg.setStandardButtons(QMessageBox.Ok)
-        msg.buttonClicked.connect(highlightMissing)
+        def showNoIntegrityWarning(self):
+            self.msg = QtWidgets.QMessageBox()
+            self.msg.setIcon(QtWidgets.QMessageBox.Warning)
+            self.msg.setText("Please provide every requested information")
+            self.msg.setInformativeText("The missing fields are highlighted")
+            self.msg.setWindowTitle("Missing entries detected!")
+            self.msg.setStandardButtons(QtWidgets.QMessageBox.Ok)
+            self.msg.buttonClicked.connect(highlightMissing)
 
-    def highlightMissing():
-        print("Not implemented yet")
 
-    def saveTrainData():
-        if lightningYes:
-            if sky2gnd.isChecked() and sky2sky.isChecked():
-                label = 3
-            elif sky2gnd.isChecked():
-                label = 1
+        def highlightMissing(self):
+            print("Not implemented yet")
+
+        def saveTrainData(self):
+            if self.lightningYes:
+                if self.sky2gnd.isChecked() and self.sky2sky.isChecked():
+                    self.label = 3
+                elif self.sky2gnd.isChecked():
+                    self.label = 1
+                else:
+                    self.label = 2
             else:
-                label = 2
-        else:
-            label = 0
-        img_path = reviewBuffer[progress].filename
-        img_name = os.path.basename(img_path)
-        trainingData = np.append((img_name, filename, xPos, yPos))
+                self.label = 0
+            self.img_path = self.reviewBuffer[self.progress].filename
+            self.img_name = os.path.basename(self.img_path)
+            trainingData = np.append((self.img_name, self.filename, self.xPos, self.yPos))
+
+        def group1Choice(self):
+            if self.lightningYes.isChecked():
+                print("User selected 'lightning' \n Enabling further tasks")
+                self.group2.setEnabled(True)
+                self.selectToolButton.setEnabled(True)
+            if self.lightningNo.isChecked():
+                print("User slected 'no lightning'")
+
+        self.lightningYes.toggled.connect(group1Choice)
+        self.lightningNo.toggled.connect(group1Choice)
+        self.button_next.clicked.connect(ProbeSubmissionIntegrity)
+        self.button_quit.clicked.connect(quitDialog)
+        self.selectToolButton.clicked.connect(SelectTool)
 
 
+        '''def drawOverlay(): # Inspired by snow's answer on  https://stackoverflow.com/questions/39614777/how-to-draw-a-proper-grid-on-pyqt
+            gridLines = []
+            setSceneRect(0, 0, img_label.width)
 
-    '''def drawOverlay(): # Inspired by snow's answer on  https://stackoverflow.com/questions/39614777/how-to-draw-a-proper-grid-on-pyqt
-        gridLines = []
-        setSceneRect(0, 0, img_label.width)
-
-        for line in gridLines(visible = True)
+            for line in gridLines(visible = True)
             line.setVisible(visible)
 
-    class NewLabel(QLabel):
+         class NewLabel(QLabel):
         def __init__(self, text):
             super(NewLabel, self).__init__(text)
 
         def resizeEvent(self, event):
             width = self.width()
             height = self.height()
-'''
+        '''
 # RUBBERBAND! https://wiki.python.org/moin/PyQt/Selecting%20a%20region%20of%20a%20widget
 def loadTrainData():
     print("Please specify the abs path to the training data file:\n")
@@ -274,12 +288,15 @@ print("Please specify input directory as an abs path [or enter skip",
 while True:
     imgpath = input()
     if PathValidator(imgpath):
+        imgpath = PathValidator(imgpath)
         break
     if imgpath.lower() == "skip":
         print("Skipping...\n"+
         "Provide a path to already converted images or leave empty\n")
-        imgpath_secondary = input().lower()
+        imgpath_secondary = input()
         if PathValidator(imgpath_secondary):
+            imgpath_secondary = PathValidator(imgpath_secondary)
+            print(imgpath_secondary)
             operatingPrompt(imgpath_secondary)
         else:
             operatingPrompt(None)
@@ -302,6 +319,7 @@ counter = 0
 if not os.path.exists(imgpath + "/bg_substraction"):
     os.makedirs(imgpath + "/bg_substraction")
 
+globalCounter = 0
 for seq in seqlist:
     ref = seq['ref']
     extensionlist = []
@@ -326,11 +344,12 @@ for seq in seqlist:
             process = ImageChops.subtract(imgin, img_compare)
             imgout = ImageChops.invert(process)
             imgout.save(inv_outfile)
+            globalCounter += 1
 
     else:
         print("Invalid format or file not found!\n")
 
-print(str(counter) + " image files have been successfully converted!\n")
+print(str(globalCounter) + " image files have been successfully converted!\n") #counter shows wrong value due to variable length of one seq
 print("The results have been saved to " + imgpath + "/bg_substraction/\n")
 print("")
 outputPath = imgpath + "/bg_substraction/"
