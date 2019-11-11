@@ -394,7 +394,7 @@ for seq in seqlist:
             inv_outfile = imgpath + "/bg_subtraction/" + "1_aragats-%04d.jpg" % img
             imgin = Image.open(infile)
             process = ImageChops.subtract(imgin, img_compare)
-            imgout = ImageChops.invert(process)
+            imgout = ImageChops.invert(process).convert('L')
             imgout.save(inv_outfile)
             globalCounter += 1
 
