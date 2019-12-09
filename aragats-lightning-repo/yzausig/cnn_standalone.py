@@ -2,25 +2,41 @@
 
 from __future__ import print_function
 import keras
+import os
+import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
 from keras.layers import Conv2D, MaxPooling2D
 from keras import backend as K
 from time import time #added for line 57 format(time())
 from keras.callbacks import TensorBoard #added
+from PIL import Image
 
-batch_size = 128
+train_test_ratio = 0.7 # e.g. 7 of 10 pictures will be used for training
+batch_size = 40
 num_classes = 2
-epochs = 14
+epochs = 10
 
-x_train = x_train.reshape(x_train.shape[0], 1, img_rows, img_cols)
-x_test = x_test.reshape(x_test.shape[0], 1, img_rows, img_cols)
-input_shape = (1, img_rows, img_cols)
+img_rows = 160
+img_cols = 144
+filepath = os.path.dirname(os.path.realpath(__file__))
+noExample = len([name for name in os.listdir('.') if os.path.isfile(name)]) # count of all available examples (160)
+
+x = np.zeros([noExample, img_rows, img_cols])
+label = np.zeros([noExample, img_rows, img_cols])
+
+for img in os.listdir(filepath+"/3_split"): # create label array
+        tempArray = np.asarray(img)
+
+for img in os.listdir(filepath+"/4_split"): # create x array
+        tempArray = np.asarray(img)
+
+
+
+input_shape = x_train.shape()
 
 x_train = x_train.astype('float32')
 x_test = x_test.astype('float32')
-x_train /= 255
-x_test /= 255
 print('x_train shape:', x_train.shape)
 print(x_train.shape[0], 'train samples')
 print(x_test.shape[0], 'test samples')
