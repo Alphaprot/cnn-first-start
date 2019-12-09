@@ -22,16 +22,28 @@ img_cols = 144
 filepath = os.path.dirname(os.path.realpath(__file__))
 noExample = len([name for name in os.listdir('.') if os.path.isfile(name)]) # count of all available examples (160)
 
-x = np.zeros([noExample, img_rows, img_cols])
-label = np.zeros([noExample, img_rows, img_cols])
+x = np.zeros([1, img_rows, img_cols])
+label = np.zeros([1, img_rows, img_cols])
 
-for img in os.listdir(filepath+"/3_split"): # create label array
-        tempArray = np.asarray(img)
+for counter, img in enumerate(os.listdir(filepath+"/3_split")): # create label array
+        label_img = Image.open(img)
+        filename = label_img.filename
+        reqFilename = "4" + filename[1:]
+        tempArray = np.asarray(label_img)
+        tempArray = np.swapaxes(tempArray, 0, 1)
+        tempArray = tempArray[np.newaxis, :, :]
+        np.concatenate(label, tempArray)
 
-for img in os.listdir(filepath+"/4_split"): # create x array
-        tempArray = np.asarray(img)
+        if os.path.isfile("4_split/" + reqFilename): # create x array
+                tempArray = np.asarray(reqFilename)
+                tempArray = np.swapaxes(tempArray, 0, 1)
+                tempArray = tempArray[np.newaxis, :, :]
+                np.concatenate(x, tempArray)
+        else:
+                print("No associated x_data found for label file %s!\n" %filename)
 
-
+x_train, x_test = x[:(noExample*train_test_ratio), :, :], x[(noExample*train_test_ratio):, :, :]
+label_train, label_test = x[:(noExample*train_test_ratio), :, :], x[(noExample*train_test_ratio):, :, :]
 
 input_shape = x_train.shape()
 
