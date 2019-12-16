@@ -19,33 +19,44 @@ epochs = 10
 
 img_rows = 160
 img_cols = 144
-filepath = os.path.dirname(os.path.realpath(__file__))
-noExample = len([name for name in os.listdir('.') if os.path.isfile(name)]) # count of all available examples (160)
+scriptPath = os.path.dirname(os.path.realpath(__file__))
+#noExample = len([name for name in os.listdir('.') if os.path.isfile(name)]) # count of all available examples (160)
 
-x = np.zeros([1, img_rows, img_cols])
-label = np.zeros([1, img_rows, img_cols])
+x = np.zeros([1, img_rows, img_cols], dtype=np.int8) # dtype=int !
+label = np.zeros([1, img_rows, img_cols], dtype=np.int8) # dtype=int !
 
-for counter, img in enumerate(os.listdir(filepath+"/3_split")): # create label array
-        label_img = Image.open(img)
+for counter, img in enumerate(os.listdir(scriptPath + "/3_split")): # create label array
+        label_img = Image.open(scriptPath + "/3_split/" + img)
         filename = label_img.filename
-        reqFilename = "4" + filename[1:]
-        tempArray = np.asarray(label_img)
+        tempArray = np.asarray(label_img, dtype=np.int8)
         tempArray = np.swapaxes(tempArray, 0, 1)
         tempArray = tempArray[np.newaxis, :, :]
-        np.concatenate(label, tempArray)
+        print(tempArray.shape, tempArray.dtype)
+        print(label.shape, label.dtype)
 
-        if os.path.isfile("4_split/" + reqFilename): # create x array
-                tempArray = np.asarray(reqFilename)
+        label = np.concatenate((label, tempArray))
+        head, tail = os.path.split(filename)
+        tail =  "4" + tail[1:]
+
+        reqPath = scriptPath + "/4_split/" + tail
+        print(reqPath)
+        if os.path.isfile(reqPath): # create x array
+                standard_img = Image.open(reqPath)
+                tempArray = np.asarray(standard_img, dtype=np.int8)
                 tempArray = np.swapaxes(tempArray, 0, 1)
                 tempArray = tempArray[np.newaxis, :, :]
-                np.concatenate(x, tempArray)
+                x = np.concatenate((x, tempArray))
         else:
                 print("No associated x_data found for label file %s!\n" %filename)
 
-x_train, x_test = x[:(noExample*train_test_ratio), :, :], x[(noExample*train_test_ratio):, :, :]
-label_train, label_test = x[:(noExample*train_test_ratio), :, :], x[(noExample*train_test_ratio):, :, :]
+print("Shape before slicing: " + str(label.shape) + str(x.shape))
+noExample = len(x)
+print((noExample*train_test_ratio))
+x_train, x_test = x[:int(noExample*train_test_ratio), :, :], x[int(noExample*train_test_ratio):, :, :]
+label_train, label_test = label[:int(noExample*train_test_ratio), :, :], label[int(noExample*train_test_ratio):, :, :]
 
-input_shape = x_train.shape()
+print(x_train.shape, x_test.shape, label_train.shape, label_test.shape)
+input_shape = x_train.shape
 
 x_train = x_train.astype('float32')
 x_test = x_test.astype('float32')
