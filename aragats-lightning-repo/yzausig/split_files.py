@@ -24,7 +24,7 @@ for img in os.listdir(filepath):
                     os.makedirs(filepath + "/3_split/")
                 crop.save("%s/3_split/3%s-%02d%02d.jpg" % (filepath, newName, i, j))
         print("Filepath is: %s" %filepath)        
-        try:        
+        try:
             referenceImg = Image.open(filepath +"/1%s.jpg" % newName)
         except IOError:
             print("No corresponding image named %s for %s could be found!\n" % (referenceImg.filename, labelImg.filename))          

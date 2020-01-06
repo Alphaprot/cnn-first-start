@@ -13,7 +13,7 @@ from keras.callbacks import TensorBoard #added
 from PIL import Image
 
 train_test_ratio = 0.7 # e.g. 7 of 10 pictures will be used for training
-numberOfChannels = 1 # How many channels has the input image (1 channel -> greyscale)?
+numberOfChannels = 3 # How many channels has the input image (1 channel -> greyscale)?
 treshold = 180
 batch_size = 40
 num_classes = 2
@@ -26,7 +26,8 @@ scriptPath = os.path.dirname(os.path.realpath(__file__))
 #noExample = len([name for name in os.listdir('.') if os.path.isfile(name)]) # count of all available examples (160)
 
 x = np.zeros([1, numberOfChannels, img_rows, img_cols], dtype=np.uint8) # dtype=int !
-label = np.zeros([1, img_rows, img_cols], dtype=np.int8) # dtype=int !
+#label = np.zeros([1, img_rows, img_cols], dtype=np.int8) # dtype=int !
+label = np.zeros([1], dtype=np.int8)
 
 for counter, img in enumerate(os.listdir(scriptPath + "/3_split")): # create label array
         label_img = Image.open(scriptPath + "/3_split/" + img)
@@ -34,7 +35,12 @@ for counter, img in enumerate(os.listdir(scriptPath + "/3_split")): # create lab
         label_img = label_img.point(lambda p: p > treshold and 255) 
         label_img = label_img.convert("1") # converts image to binary black and white
         img_array = np.asarray(label_img, dtype=np.int8)
+        if 0 in img_array[:, :]:
+                label = np.append(label, [1])
+        else:
+                label = np.append(label, [0])
         
+        '''
         tempArray = np.asarray(label_img, dtype=np.int8)
         tempArray = np.swapaxes(tempArray, 0, 1)
         tempArray = tempArray[np.newaxis, :, :]
@@ -43,17 +49,18 @@ for counter, img in enumerate(os.listdir(scriptPath + "/3_split")): # create lab
         print(label.shape, label.dtype)
 
         label = np.concatenate((label, tempArray))
-        
+        '''
         head, tail = os.path.split(filename)
-        tail =  "4" + tail[1:]
+        tail =  "4" + tail[2:]
+        #tail =  "4" + tail[1:]
 
         reqPath = scriptPath + "/4_split/" + tail
         print(reqPath)
         if os.path.isfile(reqPath): # create x array
                 standard_img = Image.open(reqPath)
                 tempArray = np.asarray(standard_img, dtype=np.uint8)
-                tempArray = np.swapaxes(tempArray, 0, 1)
-                tempArray = tempArray[np.newaxis, np.newaxis, :, :]
+                tempArray = np.swapaxes(tempArray, 0, 2)
+                tempArray = tempArray[np.newaxis, :, :, :]
                 x = np.concatenate((x, tempArray))
         else:
                 print("No associated x_data found for label file %s!\n" %filename)
@@ -63,10 +70,11 @@ for counter, img in enumerate(os.listdir(scriptPath + "/3_split")): # create lab
 print("Shape before slicing: " + str(label.shape) + str(x.shape))
 noExample = len(x)
 x_train, x_test = x[1:int(noExample*train_test_ratio), :, :], x[int(noExample*train_test_ratio):, :, :]
-label_train, label_test = label[1:int(noExample*train_test_ratio), :, :], label[int(noExample*train_test_ratio):, :, :]
+#label_train, label_test = label[1:int(noExample*train_test_ratio), :, :], label[int(noExample*train_test_ratio):, :, :]
+label_train, label_test = label[1:int(noExample*train_test_ratio)], label[int(noExample*train_test_ratio):]
 
 print("Shapes are: %s, %s, %s, %s "  %(x_train.shape, x_test.shape, label_train.shape, label_test.shape))
-input_shape = (1, img_rows, img_cols)
+input_shape = (3, img_rows, img_cols)
 
 x_train = x_train.astype('float32')
 x_test = x_test.astype('float32')
