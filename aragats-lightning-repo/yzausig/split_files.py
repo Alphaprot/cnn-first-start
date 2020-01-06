@@ -23,19 +23,18 @@ for img in os.listdir(filepath):
                 if not os.path.exists(filepath + "/3_split/"):
                     os.makedirs(filepath + "/3_split/")
                 crop.save("%s/3_split/3%s-%02d%02d.jpg" % (filepath, newName, i, j))
-                
-        for img in os.listdir(filepath):
-            if img.startswith("1%s.jpg" % newName):
-                referenceImg = Image.open(img)
-                if (w, h == referenceImg.size):
-                    for i in range(0, sliceX):
-                        for j in range(0, sliceY):
-                            crop = referenceImg.crop(((i*wStep), (j*hStep), ((i+1)*wStep), ((j+1)*hStep)))
-                            if not os.path.exists(filepath + "/4_split/"):
-                                os.makedirs(filepath + "/4_split/")
-                            crop.save("%s/4_split/4%s-%02d%02d.jpg" % (filepath, newName, i, j))
-                else:
-                    print("Size mismatch!")
-            else:
-                print("No corresponding image for %s could be found!\n" % labelImg.filename)           
+        print("Filepath is: %s" %filepath)        
+        try:        
+            referenceImg = Image.open(filepath +"/1%s.jpg" % newName)
+        except IOError:
+            print("No corresponding image named %s for %s could be found!\n" % (referenceImg.filename, labelImg.filename))          
 
+        if (w, h == referenceImg.size):
+            for i in range(0, sliceX):
+                for j in range(0, sliceY):
+                    crop = referenceImg.crop(((i*wStep), (j*hStep), ((i+1)*wStep), ((j+1)*hStep)))
+                    if not os.path.exists(filepath + "/4_split/"):
+                        os.makedirs(filepath + "/4_split/")
+                    crop.save("%s/4_split/4%s-%02d%02d.jpg" % (filepath, newName, i, j))
+        else:
+            print("Size mismatch!")
