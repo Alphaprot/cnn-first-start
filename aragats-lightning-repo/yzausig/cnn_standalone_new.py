@@ -4,7 +4,7 @@ from __future__ import print_function
 import keras
 import os
 import numpy as np
-from keras.models import Sequential
+from keras.models import Sequential, load_model
 from keras.layers import Dense, Dropout, Flatten
 from keras.layers import Conv2D, MaxPooling2D
 from keras import backend as K
@@ -104,7 +104,8 @@ model.add(Dropout(0.5))
 model.add(Dense(num_classes, activation='softmax'))
 
 model.compile(loss=keras.losses.categorical_crossentropy,
-        optimizer=keras.optimizers.Adadelta(),
+        optimizer=keras.optimizers.Adam(learning_rate=0.001, beta_1=0.9, beta_2=0.99, amsgrad=False),
+       # optimizer=keras.optimizers.Adadelta(),
         metrics=['accuracy'])
 
 tensorboard = keras.callbacks.TensorBoard(log_dir="logs/{}".format(time()),
@@ -119,3 +120,32 @@ model.fit(x_train, label_train,
 score = model.evaluate(x_test, label_test, verbose=0)
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
+print("\n")
+print("Do you want to save this network in the current working directory? [y/N]")
+user_input = input().lower()
+
+while True:
+        if user_input is "y":
+                model.save("model.h5")
+                print("Saved model and weights in the current working directory.")
+                break
+        elif user_input is "n" or None:
+                break
+
+print("Do you want to re-load the network in order to test it? [y/N]")
+user_input = input().lower()
+
+while True:
+        if user_input is "y":
+                model = load_model('model.h5')
+                print("Loaded model and weights")
+                model.summary()
+        
+                # Testing the loaded model
+                model.compile(loss=keras.losses.categorical_crossentropy,
+                optimizer=keras.optimizers.Adadelta(),
+                metrics=['accuracy'])
+                score = model.evaluate(test_data)
+                break
+        elif user_input is "n" or None:
+                break
