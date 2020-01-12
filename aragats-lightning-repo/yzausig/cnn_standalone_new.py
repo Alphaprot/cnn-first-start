@@ -51,14 +51,16 @@ for counter, img in enumerate(os.listdir(scriptPath + "/3_split")): # create lab
         label = np.concatenate((label, tempArray))
         '''
         head, tail = os.path.split(filename)
-        tail =  "4" + tail[2:]
-        #tail =  "4" + tail[1:]
+        #tail =  "4" + tail[2:]
+        tail =  "4" + tail[1:]
 
         reqPath = scriptPath + "/4_split/" + tail
         print(reqPath)
         if os.path.isfile(reqPath): # create x array
                 standard_img = Image.open(reqPath)
                 tempArray = np.asarray(standard_img, dtype=np.uint8)
+                #tempArray = np.swapaxes(tempArray, 0, 1)
+                #tempArray = tempArray[np.newaxis, np.newaxis, :, :]
                 tempArray = np.swapaxes(tempArray, 0, 2)
                 tempArray = tempArray[np.newaxis, :, :, :]
                 x = np.concatenate((x, tempArray))
@@ -74,7 +76,7 @@ x_train, x_test = x[1:int(noExample*train_test_ratio), :, :], x[int(noExample*tr
 label_train, label_test = label[1:int(noExample*train_test_ratio)], label[int(noExample*train_test_ratio):]
 
 print("Shapes are: %s, %s, %s, %s "  %(x_train.shape, x_test.shape, label_train.shape, label_test.shape))
-input_shape = (3, img_rows, img_cols)
+input_shape = (numberOfChannels, img_rows, img_cols)
 
 x_train = x_train.astype('float32')
 x_test = x_test.astype('float32')
@@ -104,8 +106,8 @@ model.add(Dropout(0.5))
 model.add(Dense(num_classes, activation='softmax'))
 
 model.compile(loss=keras.losses.categorical_crossentropy,
-        optimizer=keras.optimizers.Adam(learning_rate=0.001, beta_1=0.9, beta_2=0.99, amsgrad=False),
-       # optimizer=keras.optimizers.Adadelta(),
+        #optimizer=keras.optimizers.Adam(learning_rate=0.001, beta_1=0.9, beta_2=0.99, amsgrad=False),
+       optimizer=keras.optimizers.Adadelta(),
         metrics=['accuracy'])
 
 tensorboard = keras.callbacks.TensorBoard(log_dir="logs/{}".format(time()),
@@ -118,25 +120,26 @@ model.fit(x_train, label_train,
         callbacks=[tensorboard],
         validation_data=(x_test, label_test))
 score = model.evaluate(x_test, label_test, verbose=0)
+model.summary()
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
 print("\n")
 print("Do you want to save this network in the current working directory? [y/N]")
-user_input = input().lower()
 
 while True:
-        if user_input is "y":
+        user_input = input().lower()
+        if user_input is 'y':
                 model.save("model.h5")
                 print("Saved model and weights in the current working directory.")
                 break
-        elif user_input is "n" or None:
+        elif user_input is 'n' or ' ':
                 break
 
 print("Do you want to re-load the network in order to test it? [y/N]")
-user_input = input().lower()
 
 while True:
-        if user_input is "y":
+        user_input = input().lower()
+        if user_input is 'y':
                 model = load_model('model.h5')
                 print("Loaded model and weights")
                 model.summary()
@@ -147,5 +150,5 @@ while True:
                 metrics=['accuracy'])
                 score = model.evaluate(test_data)
                 break
-        elif user_input is "n" or None:
+        elif user_input is 'n' or ' ':
                 break
