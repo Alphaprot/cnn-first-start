@@ -13,20 +13,52 @@ from keras.callbacks import TensorBoard #added
 from PIL import Image
 
 train_test_ratio = 0.7 # e.g. 7 of 10 pictures will be used for training
-numberOfChannels = 1 # How many channels has the input image (1 channel -> greyscale)?
 treshold = 180
 batch_size = 40
 num_classes = 2
 epochs = 10
 keras.backend.set_image_data_format('channels_first')
+readMode = ''
 
 img_rows = 160
 img_cols = 144
 scriptPath = os.path.dirname(os.path.realpath(__file__))
 #noExample = len([name for name in os.listdir('.') if os.path.isfile(name)]) # count of all available examples (160)
 
-x = np.zeros([1, numberOfChannels, img_rows, img_cols], dtype=np.uint8) # dtype=int !
-label = np.zeros([1, img_rows, img_cols], dtype=np.int8) # dtype=int !
+def main(argv):
+    global readMode
+    try:
+        opts, args = getopt.getopt(argv, 'm:h', ["help","mode="])
+    except getopt.GetoptError as err:
+        print(err)
+        print(sys.argv[0] + ' -m <greyscale> or <RGB>')
+        sys.exit(2)
+    for opt, arg in opts:
+        if opt == '-h':
+            print(sys.argv[0] + ' -m <greyscale> or <RGB>')
+            sys.exit()
+        elif opt in ("-m", "--mode"):
+                if arg.lower() is 'rgb'
+                        readMode = 'RGB'
+                elif arg.lower() is 'greyscale':
+                        readMode = 'greyscale'
+                else:
+                        raise ValueError("Unknown option %s for -m (mode)" %arg)
+                        print(sys.argv[0] + ' -m <greyscale> or <RGB>')
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
+    print('Mode is %s' % readMode)
+else: readMode = 'RGB' # Defaults to color
+
+if readMode = 'RGB':
+        numberOfChannels = 3
+elif readMode = 'greyscale':
+        numberOfChannels = 1
+
+ x = np.zeros([1, numberOfChannels, img_rows, img_cols], dtype=np.uint8) # dtype=int !
+        label = np.zeros([1, img_rows, img_cols], dtype=np.int8) # dtype=int !
 
 for counter, img in enumerate(os.listdir(scriptPath + "/3_split")): # create label array
         label_img = Image.open(scriptPath + "/3_split/" + img)
@@ -52,8 +84,12 @@ for counter, img in enumerate(os.listdir(scriptPath + "/3_split")): # create lab
         if os.path.isfile(reqPath): # create x array
                 standard_img = Image.open(reqPath)
                 tempArray = np.asarray(standard_img, dtype=np.uint8)
-                tempArray = np.swapaxes(tempArray, 0, 1)
-                tempArray = tempArray[np.newaxis, np.newaxis, :, :]
+                if readMode is 'greyscale':
+                        tempArray = np.swapaxes(tempArray, 0, 1)
+                        tempArray = tempArray[np.newaxis, np.newaxis, :, :]
+                elif readMode is 'RGB':
+                        tempArray = np.swapaxes(tempArray, 0, 2)
+                        tempArray = tempArray[np.newaxis, :, :, :]               
                 x = np.concatenate((x, tempArray))
         else:
                 print("No associated x_data found for label file %s!\n" %filename)
@@ -70,7 +106,6 @@ input_shape = (1, img_rows, img_cols)
 
 x_train = x_train.astype('float32')
 x_test = x_test.astype('float32')
-
 
 print('x_train shape:', x_train.shape)
 print(x_train.shape[0], 'train samples')
@@ -89,10 +124,10 @@ model.add(Conv2D(32, kernel_size=(3, 3),
           input_shape=input_shape))
 model.add(Conv2D(64, (3, 3), activation='relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
-model.add(Dropout(0.25))
+model.add(Dropout(0.45))
 model.add(Flatten())
 model.add(Dense(128, activation='relu'))
-model.add(Dropout(0.5))
+model.add(Dropout(0.2))
 model.add(Dense(num_classes, activation='softmax'))
 
 model.compile(loss=keras.losses.categorical_crossentropy,
@@ -109,5 +144,36 @@ model.fit(x_train, label_train,
         callbacks=[tensorboard],
         validation_data=(x_test, label_test))
 score = model.evaluate(x_test, label_test, verbose=0)
+model.summary()
+print("\n")
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
+print("\n")
+print("Do you want to save this network in the current working directory? [y/N]")
+
+while True:
+        user_input = input().lower()
+        if user_input is 'y':
+                model.save("model.h5")
+                print("Saved model and weights in the current working directory.")
+                break
+        elif user_input is 'n' or ' ':
+                break
+
+print("Do you want to re-load the network in order to test it? [y/N]")
+
+while True:
+        user_input = input().lower()
+        if user_input is 'y':
+                model = load_model('model.h5')
+                print("Loaded model and weights")
+                model.summary()
+        
+                # Testing the loaded model
+                model.compile(loss=keras.losses.categorical_crossentropy,
+                optimizer=keras.optimizers.Adadelta(),
+                metrics=['accuracy'])
+                score = model.evaluate(test_data)
+                break
+        elif user_input is 'n' or ' ':
+                break
